@@ -1,5 +1,9 @@
 <?php
-/** @var \Cake\View\View $this */
+/**
+ * @var \Cake\View\View $this
+ * @var array $flashMessages
+ * @var string $titleForLayout
+ */
 use Cake\Core\Configure;
 
 $googleAnalyticsId = Configure::read('google_analytics_id');
