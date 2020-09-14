@@ -13,6 +13,5 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', <?= json_encode($googleAnalyticsId) ?>, <?= json_encode($gaConfig) ?>);
-        gtag('event', 'page_view');
     </script>
 <?php endif; ?>
