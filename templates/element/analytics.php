@@ -3,11 +3,7 @@
     use Cake\Core\Configure;
 
     $googleAnalyticsId = Configure::read('google_analytics_id');
-    $gaConfig = [
-        'page_location' => $this->request->getUri()->__toString(),
-        'page_path' => $this->request->getUri()->getPath(),
-        'page_title' => $titleForLayout ?? null,
-    ];
+    $gaConfig = ['page_title' => $titleForLayout ?? null];
 ?>
 <?php if ($googleAnalyticsId && !Configure::read('debug')): ?>
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
