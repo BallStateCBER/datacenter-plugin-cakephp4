@@ -1,17 +1,28 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- * @var \App\View\AppView $this
- */
+/** @var \Cake\View\View $this */
+use Cake\Core\Configure;
 
-echo $this->fetch('content');
+$googleAnalyticsId = Configure::read('google_analytics_id');
+$gaConfig = ['page_title' => $titleForLayout ?? null];
+?>
+<?php if ($googleAnalyticsId && !Configure::read('debug')): ?>
+    <?php $this->append('buffered'); ?>
+    gtag('config', <?= json_encode($googleAnalyticsId) ?>, <?= json_encode($gaConfig) ?>);
+    <?php $this->end(); ?>
+<?php endif; ?>
+
+<?php if (!empty($flashMessages)): ?>
+    <?php foreach ($flashMessages as $msg): ?>
+        <?php $this->append('buffered'); ?>
+        flashMessage.insert(<?= json_encode($msg['message']) ?>, <?= json_encode($msg['class']) ?>);
+        <?php $this->end(); ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
+<?= $this->fetch('content') ?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        <?= $this->fetch('buffered') ?>
+    });
+</script>
