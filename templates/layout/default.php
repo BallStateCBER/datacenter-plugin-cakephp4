@@ -1,57 +1,118 @@
 <?php
-/**
- * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
- * @link          https://cakephp.org CakePHP(tm) Project
- * @since         0.10.0
- * @license       https://opensource.org/licenses/mit-license.php MIT License
- * @var \App\View\AppView $this
- */
-
-$cakeDescription = 'CakePHP: the rapid development php framework';
+use Cake\Core\Configure;
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
     <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
+        <?php
+        $title = Configure::read('data_center_subsite_title');
+        if (isset($titleForLayout) && $titleForLayout) {
+            $title = $titleForLayout . ' - ' . $title;
+        }
+        echo $title;
+        ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
-
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
-
+    <meta name="title" content="<?= $title ?>" />
+    <meta name="author" content="Center for Business and Economic Research, Ball State University" />
+    <meta name="language" content="en" />
+    <meta name="viewport" content="width=device-width" />
     <?= $this->fetch('meta') ?>
+    <link rel="apple-touch-icon" sizes="180x180" href="/data_center/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/data_center/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/data_center/favicon-16x16.png" />
+    <link rel="manifest" href="/data_center/manifest.json" />
+    <link rel="mask-icon" href="/data_center/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="theme-color" content="#cc0022" />
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,400italic,700" rel="stylesheet" type="text/css" />
+    <?= $this->Html->css('style') ?>
     <?= $this->fetch('css') ?>
+    <?= $this->fetch('scriptTop') ?>
+
+    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/data_center/js/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="/data_center/js/slide.js"></script>
+    <script src="/data_center/js/flash.js"></script>
+
+    <?= $this->Html->script('/data_center/js/datacenter.js') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+<body class="default-layout">
+
+<?= $this->fetch('top-html') ?>
+
+<header id="header_top">
+    <div class="max_width">
+        <h1>
+            <a href="https://bsu.edu/cber">
+                Center for Business and Economic Research
+            </a>
+            -
+            <a href="https://bsu.edu">
+                Ball State University
+            </a>
+        </h1>
+        <br class="clear" />
+        <a href="https://cberdata.org/" id="data_center_nameplate">
+            CBER Data Center
+        </a>
+        <?= $this->element('DataCenter.nav') ?>
+        <br class="clear" />
+    </div>
+</header>
+
+<?php if ($this->fetch('subsite_title')): ?>
+    <?= $this->fetch('subsite_title') ?>
+<?php else: ?>
+    <h1 id="subsite_title" class="max_width_padded">
+        <?= Configure::read('data_center_subsite_title') ?>
+    </h1>
+<?php endif; ?>
+
+<div id="content_wrapper" class="max_width">
+    <?php if ($this->fetch('sidebar')): ?>
+        <div id="two_col_wrapper">
+            <?php /*
+             * These two col_stretcher divs ensure that both the sidebar and content area have the appearance
+             * of having the same height.
+             */ ?>
+            <div id="menu_col_stretcher" class="col_stretcher"></div>
+            <div id="content_col_stretcher" class="col_stretcher"></div>
+            <div id="menu_column" class="col">
+                <?= $this->fetch('sidebar') ?>
+            </div>
+            <main id="content_column" class="col">
+                <?= $this->fetch('content') ?>
+                <br class="clear" />
+            </main>
         </div>
-        <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/4/">API</a>
-        </div>
-    </nav>
-    <main class="main">
-        <div class="container">
-            <?= $this->Flash->render() ?>
+    <?php else: ?>
+        <main>
             <?= $this->fetch('content') ?>
-        </div>
-    </main>
-    <footer>
-    </footer>
+        </main>
+        <br class="clear" />
+    <?php endif; ?>
+</div>
+
+<?= $this->element('DataCenter.footer') ?>
+
+<noscript id="noscript" class="alert alert-warning">
+    <div>
+        JavaScript is currently disabled in your browser. For full functionality of this website, JavaScript must
+        be enabled. If you need assistance,
+        <a href="https://www.enable-javascript.com/" target="_blank">Enable-JavaScript.com</a> provides instructions.
+    </div>
+</noscript>
+
+<?= $this->element('DataCenter.analytics') ?>
+<?= $this->fetch('scriptBottom') ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        <?= $this->fetch('buffered') ?>
+    });
+</script>
 </body>
 </html>
