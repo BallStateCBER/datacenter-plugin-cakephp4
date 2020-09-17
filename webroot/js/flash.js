@@ -1,13 +1,7 @@
 const flashMessage = {
-    init: function () {
-        const messages = document.getElementById('flash_messages');
-        if (messages.style.display === 'none') {
-            slideDown(messages);
-        }
-    },
     insert: function (message, className) {
         const alert = document.createElement('div');
-        alert.className = 'alert alert-dismissible';
+        alert.className = 'alert alert-dismissible fade show';
         alert.role = 'alert';
         switch (className) {
             case 'error':
@@ -19,24 +13,14 @@ const flashMessage = {
             default:
                 alert.className += ' alert-info';
         }
+        alert.innerHTML = message +
+            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<span aria-hidden="true">&times;</span>' +
+            '</button>';
+        const container = document.getElementById('flash-messages');
 
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'close';
-        button.dataset.dismiss = 'alert';
-        button.innerHTML = '<span aria-hidden="true">&times;</span>';
-        alert.appendChild(button);
-        alert.innerHTML += message;
-
-        const container = document.getElementById('flash_messages');
-        if (container.style.display !== 'none') {
-            alert.style.display = 'none';
-            container.appendChild(alert);
-            slideDown(alert);
-            return;
-        }
-
+        alert.style.display = 'none';
         container.appendChild(alert);
-        slideDown(container);
+        slideDown(alert);
     }
 };

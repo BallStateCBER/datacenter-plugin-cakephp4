@@ -93,6 +93,9 @@ use Cake\Core\Configure;
                 <?= $this->fetch('sidebar') ?>
             </div>
             <main id="content_column" class="col">
+                <div id="flash-messages">
+                    <?= $this->Flash->render() ?>
+                </div>
                 <?= $this->fetch('content') ?>
                 <br class="clear" />
             </main>
