@@ -5,6 +5,11 @@ use Cake\Core\Configure;
 <html lang="en">
 <head>
     <?= $this->Html->charset() ?>
+
+    <?php if (Configure::read('googleTagManagerId')): ?>
+        <?= $this->element('google_tag_manager') ?>
+    <?php endif; ?>
+
     <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
     <title>
         <?php
@@ -41,6 +46,9 @@ use Cake\Core\Configure;
     <?= $this->fetch('script') ?>
 </head>
 <body class="default-layout">
+<?php if (Configure::read('googleTagManagerId')): ?>
+    <?= $this->element('google_tag_manager_noscript') ?>
+<?php endif; ?>
 
 <?= $this->fetch('top-html') ?>
 
@@ -107,7 +115,6 @@ use Cake\Core\Configure;
     </div>
 </noscript>
 
-<?= $this->element('DataCenter.analytics') ?>
 <?= $this->fetch('scriptBottom') ?>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
