@@ -14,8 +14,8 @@ use Cake\Core\Configure;
     <title>
         <?php
         $title = Configure::read('data_center_subsite_title');
-        if (isset($titleForLayout) && $titleForLayout) {
-            $title = $titleForLayout . ' - ' . $title;
+        if (isset($pageTitle) && $pageTitle) {
+            $title = $pageTitle . ' - ' . $title;
         }
         echo $title;
         ?>

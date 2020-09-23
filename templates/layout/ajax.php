@@ -2,12 +2,12 @@
 /**
  * @var \Cake\View\View $this
  * @var array $flashMessages
- * @var string $titleForLayout
+ * @var string $pageTitle
  */
 use Cake\Core\Configure;
 
 $googleAnalyticsId = Configure::read('google_analytics_id');
-$gaConfig = ['page_title' => $titleForLayout ?? null];
+$gaConfig = ['page_title' => $pageTitle ?? null];
 ?>
 <?php if ($googleAnalyticsId && !Configure::read('debug')): ?>
     <?php $this->append('buffered'); ?>
