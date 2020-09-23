@@ -7,9 +7,9 @@ use Cake\TestSuite\ConsoleIntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Command\AppCommand Test Case
+ * DataCenter\Command\AppCommand Test Case
  *
- * @uses \App\Command\AppCommand
+ * @uses \DataCenter\Command\AppCommand
  */
 class AppCommandTest extends TestCase
 {
