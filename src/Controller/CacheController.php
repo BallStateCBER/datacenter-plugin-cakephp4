@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace DataCenter\Controller;
 
 use Cake\Cache\Cache;
 

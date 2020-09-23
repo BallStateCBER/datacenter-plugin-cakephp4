@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Command;
+namespace DataCenter\Command;
 
 use Cake\Command\Command;
 use Cake\Console\Arguments;
