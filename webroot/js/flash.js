@@ -1,5 +1,6 @@
-const flashMessage = {
-    insert: function (message, className) {
+class flashMessage {
+    insert(message, className)
+    {
         const alert = document.createElement('div');
         alert.className = 'alert alert-dismissible fade show';
         alert.role = 'alert';
@@ -23,4 +24,4 @@ const flashMessage = {
         container.appendChild(alert);
         slideDown(alert);
     }
-};
+}

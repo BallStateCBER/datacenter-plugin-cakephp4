@@ -18,7 +18,7 @@ $gaConfig = ['page_title' => $pageTitle ?? null];
 <?php if (!empty($flashMessages)): ?>
     <?php foreach ($flashMessages as $msg): ?>
         <?php $this->append('buffered'); ?>
-        flashMessage.insert(<?= json_encode($msg['message']) ?>, <?= json_encode($msg['class']) ?>);
+        (new FlashMessage).insert(<?= json_encode($msg['message']) ?>, <?= json_encode($msg['class']) ?>);
         <?php $this->end(); ?>
     <?php endforeach; ?>
 <?php endif; ?>
