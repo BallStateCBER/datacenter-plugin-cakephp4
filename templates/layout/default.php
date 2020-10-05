@@ -42,7 +42,6 @@ use Cake\Core\Configure;
     <script src="/data_center/js/slide.js"></script>
     <script src="/data_center/js/flash.js"></script>
 
-    <?= $this->Html->script('/data_center/js/datacenter.js') ?>
     <?= $this->fetch('script') ?>
 </head>
 <body class="default-layout">
