@@ -1,0 +1,560 @@
+$maxContentWidth: 1000px;
+$headings-font-family: Asap, "Lucida Sans", Helvetica, Arial, sans-serif;
+$headings-font-weight: bold;
+$headings-line-height: inherit;
+$headings-color: #000;
+
+/* BASIC TAGS */
+html,
+body {
+    background-color: #3A4040;
+    color: #000000;
+    font-family: Asap, "Lucida Sans", Helvetica, Arial, sans-serif;
+    font-size: 90%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body.default-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.page-header {
+    margin-top: 0;
+}
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+h2 {
+    font-size: 120%;
+    font-weight: bold;
+    margin-bottom: 14px;
+    padding-right: 5px;
+    text-align: left;
+}
+h3 {
+    font-size: 100%;
+    font-weight: bold;
+    margin-bottom: 14px;
+    padding-right: 5px;
+    text-align: left;
+}
+p {
+    margin: 0 0 10px 0;
+}
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
+blockquote {
+    p {
+        display: inline;
+    }
+}
+abbr {
+    border-bottom: 1px dashed #444;
+    cursor: default;
+}
+sup,
+sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+sub {
+    top: 0.4em;
+}
+ul,
+ol {
+    padding-left: 40px;
+    margin: 10px 0;
+}
+ul {
+    list-style-position: outside;
+    list-style-type: disc;
+
+    &.unstyled {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    > li {
+        list-style-position: outside;
+        list-style-type: disc;
+    }
+}
+img {
+    border: 0;
+}
+acronym {
+    cursor: default;
+}
+br.clear {
+    clear: both;
+    height: 0;
+}
+
+/* LINKS */
+a {
+    color: #0099BB;
+    cursor: pointer;
+    font-weight: inherit;
+    text-decoration: none;
+
+    &:visited:not(.btn),
+    &:active:not(.btn) {
+        color: #008CA8;
+    }
+    &:hover {
+        text-decoration: underline;
+
+        span {
+            text-decoration: underline;
+        }
+    }
+    &.with_icon {
+        text-decoration: none;
+
+        img {
+            vertical-align: text-top;
+        }
+    }
+}
+
+/* TAG CLOUDS */
+.tag_cloud {
+    a:nth-child(even) {
+        color: #CC0000;
+    }
+}
+
+/* FORMS */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    background-color: #FAFAFF;
+    border: 1px solid #7F9DB9;
+}
+
+/* LAYOUT */
+.max_width {
+    margin-left: auto;
+    margin-right: auto;
+    width: $maxContentWidth;
+}
+.max_width_padded {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    width: $maxContentWidth - 20px;
+}
+header {
+    flex: none;
+    line-height: inherit;
+    padding: 0;
+}
+#header_top {
+    background-color: #fff;
+    border-bottom: 5px solid #cc0000;
+    height: 70px;
+    min-width: 1000px;
+    position: relative;
+
+    .max_width {
+        height: 65px;
+        position: relative;
+    }
+    h1 {
+        color: #cc0000;
+        float: left;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-top: 15px;
+        text-transform: uppercase;
+        a {
+            color: #cc0000;
+
+            &:hover {
+                color: #000;
+                text-decoration: none;
+            }
+        }
+    }
+    nav {
+        float: right;
+        margin-top: 10px;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+
+        a {
+            background-color: #CC0000;
+            color: #FFF;
+            display: block;
+            float: left;
+            font-size: 10px;
+            font-weight: bold;
+            margin: 0 2px -5px 2px;
+            padding: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            vertical-align: text-bottom;
+
+            &:last-child {
+                margin-right: 0;
+            }
+            &:hover {
+                background-color: #3a4040;
+                text-decoration: none;
+            }
+            &.selected {
+                background-color: #3A4040;
+            }
+        }
+    }
+}
+#login_out {
+    float: right;
+    font-size: 80%;
+    line-height: 15px;
+    margin-right: 10px;
+    text-transform: uppercase;
+    a {
+        color: #cc0000;
+    }
+}
+#search {
+    float: right;
+    line-height: 15px;
+    padding-top: 2px;
+
+    input[type="text"] {
+        background-color: #cadddc;
+        border: 0;
+        float: left;
+        font-size: 80%;
+        height: 15px;
+        margin: 0;
+        padding: 2px 0;
+    }
+    input[type="submit"] {
+        background-color: #cc0000;
+        border: 0;
+        color: #fff;
+        float: left;
+        font-size: 60%;
+        font-weight: bold;
+        height: 15px;
+        margin: 0;
+        padding: 2px 0;
+        text-transform: uppercase;
+    }
+}
+#data_center_logo {
+    bottom: 0;
+    clear: left;
+    margin-top: 10px;
+    position: absolute;
+}
+#subsite_title {
+    background-color: #fff;
+    margin: 15px auto;
+    img {
+        display: block;
+    }
+}
+#content_column {
+    background-color: #FFF;
+}
+#content {
+    background-color: #FFF;
+    padding: 15px;
+}
+#load_selection_wrapper {
+    text-align: center;
+}
+#load_selection {
+    position: relative;
+    text-align: left;
+    h1 {
+        font-size: 160%;
+        font-weight: bold;
+    }
+    h2 {
+        font-size: 130%;
+        font-weight: bold;
+    }
+    aside {
+        float: right;
+        text-align: center;
+        width: 300px;
+
+        h2 {
+            font-size: 120%;
+            text-align: left;
+        }
+        p {
+            margin: 0 0 10px 0;
+            text-align: left;
+
+            &:last-of-type {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+#footer {
+    background-color: #fff;
+    border-top: 5px solid #cc0000;
+    font-size: 90%;
+    line-height: 1.3em;
+    min-width: 1000px;
+    text-align: left;
+
+    .max_width > section {
+        > section {
+            display: block;
+            float: left;
+            margin-left: 15px;
+            width: 325px;
+
+            h3 {
+                font-size: 125%;
+                font-weight: bold;
+                margin: 15px 0 0 0;
+            }
+        }
+    }
+    address {
+        font-style: normal;
+        margin-bottom: 10px;
+    }
+    hr {
+        clear: both;
+    }
+    dl {
+        margin: 0;
+        padding: 0;
+    }
+    dt {
+        clear: left;
+        float: left;
+        margin: 0;
+        padding: 0 5px 0 0;
+    }
+    dd {
+        clear: right;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+}
+#cberlogo_copyright {
+    color: #3a4040;
+    float: left;
+    font-size: 80%;
+    letter-spacing: 2px;
+    line-height: 110%;
+    text-transform: uppercase;
+    width: 185px;
+}
+#data_center_nameplate {
+    color: #CC0000;
+    bottom: 0;
+    display: block;
+    font-family: Asap, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    left: 0;
+    line-height: 20px;
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#sql_dump_toggler {
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+#two_col_wrapper {
+    position: relative;
+
+    > div {
+        background-color: #fff;
+    }
+    > .col_stretcher {
+        bottom: 0;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+    }
+    > .col {
+        position: relative;
+        z-index: 1;
+    }
+    #content_column {
+        margin-left: 245px;
+    }
+}
+#menu_col_stretcher {
+    width: 230px;
+}
+#content_col_stretcher {
+    left: 245px;
+    width: 755px;
+}
+#menu_column {
+    background-color: #FFFFFF;
+    float: left;
+    margin-right: 15px;
+    padding: 15px;
+    text-align: left;
+    width: 200px;
+
+    h3 {
+        font-size: 120%;
+        font-weight: bold;
+        margin: 20px 0 5px 0;
+        text-transform: uppercase;
+    }
+    > h3:first-child,
+    > div:first-child > h3 {
+        margin-top: 0;
+    }
+    p {
+        line-height: 110%;
+    }
+    a {
+        color: #0099bb;
+    }
+    > div {
+        margin-bottom: 15px;
+
+        h3 {
+            font-size: 11pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        select,
+        input {
+            width: 150px;
+        }
+    }
+}
+
+#content_wrapper {
+    flex: 1 0 auto;
+    padding: 0 0 30px 0;
+
+    &::after {
+        content: '\00a0'; /* &nbsp; */
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+}
+#content_inner_wrapper {
+    background-color: #fff;
+    padding: 15px;
+}
+footer {
+    flex: none;
+}
+.cake-sql-log {
+    table {
+        background: #f4f4f4;
+    }
+    td {
+        font-family: Monaco, Consolas, "Courier New", monospace;
+        padding: 4px 8px;
+        text-align: left;
+    }
+    caption {
+        color: #fff;
+    }
+}
+#noscript {
+    background-color: #FFCBAF;
+    border-radius: 5px;
+    border: 1px solid #7F0000;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
+    color: #7F0000;
+    font-weight: bold;
+    left: 15px;
+    padding: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 10;
+}
+
+/* GRADE COLORS */
+$gradeColorA: #CC553E;
+$gradeColorB: #E69F5A;
+$gradeColorC: #E0C95A;
+$gradeColorD: #85BEBF;
+$gradeColorF: #4B88AA;
+svg path.grade_a {
+    fill: $gradeColorA;
+}
+svg path.grade_b {
+    fill: $gradeColorB;
+}
+svg path.grade_c {
+    fill: $gradeColorC;
+}
+svg path.grade_d {
+    fill: $gradeColorD;
+}
+svg path.grade_f {
+    fill: $gradeColorF;
+}
+.grade_a {
+    background-color: $gradeColorA;
+    fill: $gradeColorA;
+}
+.grade_b {
+    background-color: $gradeColorB;
+    fill: $gradeColorB;
+}
+.grade_c {
+    background-color: $gradeColorC;
+    fill: $gradeColorC;
+}
+.grade_d {
+    background-color: $gradeColorD;
+    fill: $gradeColorD;
+}
+.grade_f {
+    background-color: $gradeColorF;
+    fill: $gradeColorF;
+}
+
+/* BOOTSTRAP */
+.dropdown-menu {
+    > li {
+        list-style-type: none;
+    }
+}
+
+/* UNDOING CAKEPHP STYLES */
+.cake-error,
+.cake-debug,
+.notice,
+p.error,
+p.notice {
+    clear: none;
+}
