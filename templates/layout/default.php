@@ -73,10 +73,6 @@ use Cake\Core\Configure;
 
 <?php if ($this->fetch('subsite_title')): ?>
     <?= $this->fetch('subsite_title') ?>
-<?php else: ?>
-    <h1 id="subsite_title" class="max_width_padded">
-        <?= Configure::read('data_center_subsite_title') ?>
-    </h1>
 <?php endif; ?>
 
 <div id="content_wrapper" class="max_width">
