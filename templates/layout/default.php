@@ -91,7 +91,7 @@ use Cake\Core\Configure;
             <div id="menu_column" class="col">
                 <?= $this->fetch('sidebar') ?>
             </div>
-            <main id="content_column" class="col">
+            <main id="content_column" class="col container">
                 <div id="flash-messages">
                     <?= $this->Flash->render() ?>
                 </div>
@@ -100,7 +100,7 @@ use Cake\Core\Configure;
             </main>
         </div>
     <?php else: ?>
-        <main>
+        <main class="container">
             <?= $this->fetch('content') ?>
         </main>
         <br class="clear" />
