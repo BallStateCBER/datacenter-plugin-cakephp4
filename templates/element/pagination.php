@@ -3,8 +3,8 @@
  * @var \DataCenter\View\AppView $this
  */
 
-$totalPages = $this->Paginator->counter('pages');
-$currentPage = $this->Paginator->counter('pages');
+$totalPages = $this->Paginator->counter('{{pages}}');
+$currentPage = $this->Paginator->counter('{{page}}');
 
 $hasPrev = $this->Paginator->hasPrev();
 $prevButton = $this->Paginator->prev(
