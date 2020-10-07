@@ -560,6 +560,10 @@ p.notice {
 
 /* Pagination element */
 div.paginator {
+    ul {
+        margin: auto;
+    }
+
     li {
         margin-right: 1em;
 
