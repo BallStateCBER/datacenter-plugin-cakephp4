@@ -14,18 +14,22 @@ body {
     margin: 0;
     padding: 0;
 }
+
 body.default-layout {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
+
 .page-header {
     margin-top: 0;
 }
+
 h1 {
     font-size: 2em;
     margin: 0;
 }
+
 h2 {
     font-size: 120%;
     font-weight: bold;
@@ -33,6 +37,7 @@ h2 {
     padding-right: 5px;
     text-align: left;
 }
+
 h3 {
     font-size: 100%;
     font-weight: bold;
@@ -40,38 +45,47 @@ h3 {
     padding-right: 5px;
     text-align: left;
 }
+
 p {
     margin: 0 0 10px 0;
 }
+
 strong {
     font-weight: bold;
 }
+
 em {
     font-style: italic;
 }
+
 blockquote {
     p {
         display: inline;
     }
 }
+
 abbr {
     border-bottom: 1px dashed #444;
     cursor: default;
 }
+
 sup,
 sub {
     vertical-align: baseline;
     position: relative;
     top: -0.4em;
 }
+
 sub {
     top: 0.4em;
 }
+
 ul,
 ol {
     padding-left: 40px;
     margin: 10px 0;
 }
+
 ul {
     list-style-position: outside;
     list-style-type: disc;
@@ -86,17 +100,21 @@ ul {
             padding: 0;
         }
     }
+
     > li {
         list-style-position: outside;
         list-style-type: disc;
     }
 }
+
 img {
     border: 0;
 }
+
 acronym {
     cursor: default;
 }
+
 br.clear {
     clear: both;
     height: 0;
@@ -113,6 +131,7 @@ a {
     &:active:not(.btn) {
         color: #008CA8;
     }
+
     &:hover {
         text-decoration: underline;
 
@@ -120,6 +139,7 @@ a {
             text-decoration: underline;
         }
     }
+
     &.with_icon {
         text-decoration: none;
 
@@ -152,17 +172,20 @@ select {
     margin-right: auto;
     width: $maxContentWidth;
 }
+
 .max_width_padded {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     width: $maxContentWidth - 20px;
 }
+
 header {
     flex: none;
     line-height: inherit;
     padding: 0;
 }
+
 #header_top {
     background-color: #fff;
     border-bottom: 5px solid #cc0000;
@@ -174,6 +197,7 @@ header {
         height: 65px;
         position: relative;
     }
+
     h1 {
         color: #cc0000;
         float: left;
@@ -191,6 +215,7 @@ header {
             }
         }
     }
+
     nav {
         float: right;
         margin-top: 10px;
@@ -214,26 +239,31 @@ header {
             &:last-child {
                 margin-right: 0;
             }
+
             &:hover {
                 background-color: #3a4040;
                 text-decoration: none;
             }
+
             &.selected {
                 background-color: #3A4040;
             }
         }
     }
 }
+
 #login_out {
     float: right;
     font-size: 80%;
     line-height: 15px;
     margin-right: 10px;
     text-transform: uppercase;
+
     a {
         color: #cc0000;
     }
 }
+
 #search {
     float: right;
     line-height: 15px;
@@ -248,6 +278,7 @@ header {
         margin: 0;
         padding: 2px 0;
     }
+
     input[type="submit"] {
         background-color: #cc0000;
         border: 0;
@@ -261,40 +292,50 @@ header {
         text-transform: uppercase;
     }
 }
+
 #data_center_logo {
     bottom: 0;
     clear: left;
     margin-top: 10px;
     position: absolute;
 }
+
 #subsite_title {
     background-color: #fff;
     margin: 15px auto;
+
     img {
         display: block;
     }
 }
+
 #content_column {
     background-color: #FFF;
 }
+
 #content {
     background-color: #FFF;
     padding: 15px;
 }
+
 #load_selection_wrapper {
     text-align: center;
 }
+
 #load_selection {
     position: relative;
     text-align: left;
+
     h1 {
         font-size: 160%;
         font-weight: bold;
     }
+
     h2 {
         font-size: 130%;
         font-weight: bold;
     }
+
     aside {
         float: right;
         text-align: center;
@@ -304,6 +345,7 @@ header {
             font-size: 120%;
             text-align: left;
         }
+
         p {
             margin: 0 0 10px 0;
             text-align: left;
@@ -314,6 +356,7 @@ header {
         }
     }
 }
+
 #footer {
     background-color: #fff;
     border-top: 5px solid #cc0000;
@@ -336,23 +379,28 @@ header {
             }
         }
     }
+
     address {
         font-style: normal;
         margin-bottom: 10px;
     }
+
     hr {
         clear: both;
     }
+
     dl {
         margin: 0;
         padding: 0;
     }
+
     dt {
         clear: left;
         float: left;
         margin: 0;
         padding: 0 5px 0 0;
     }
+
     dd {
         clear: right;
         float: left;
@@ -360,6 +408,7 @@ header {
         padding: 0;
     }
 }
+
 #cberlogo_copyright {
     color: #3a4040;
     float: left;
@@ -369,6 +418,7 @@ header {
     text-transform: uppercase;
     width: 185px;
 }
+
 #data_center_nameplate {
     color: #CC0000;
     bottom: 0;
@@ -382,39 +432,47 @@ header {
     text-decoration: none;
     text-transform: uppercase;
 }
+
 #sql_dump_toggler {
     color: #fff;
     font-weight: bold;
     display: inline-block;
     margin-top: 20px;
 }
+
 #two_col_wrapper {
     position: relative;
 
     > div {
         background-color: #fff;
     }
+
     > .col_stretcher {
         bottom: 0;
         position: absolute;
         top: 0;
         z-index: 0;
     }
+
     > .col {
         position: relative;
         z-index: 1;
     }
+
     #content_column {
         margin-left: 245px;
     }
 }
+
 #menu_col_stretcher {
     width: 230px;
 }
+
 #content_col_stretcher {
     left: 245px;
     width: 755px;
 }
+
 #menu_column {
     background-color: #FFFFFF;
     float: left;
@@ -429,16 +487,20 @@ header {
         margin: 20px 0 5px 0;
         text-transform: uppercase;
     }
+
     > h3:first-child,
     > div:first-child > h3 {
         margin-top: 0;
     }
+
     p {
         line-height: 110%;
     }
+
     a {
         color: #0099bb;
     }
+
     > div {
         margin-bottom: 15px;
 
@@ -447,6 +509,7 @@ header {
             font-weight: bold;
             margin-bottom: 5px;
         }
+
         select,
         input {
             width: 150px;
@@ -465,26 +528,32 @@ header {
         visibility: hidden;
     }
 }
+
 #content_inner_wrapper {
     background-color: #fff;
     padding: 15px;
 }
+
 footer {
     flex: none;
 }
+
 .cake-sql-log {
     table {
         background: #f4f4f4;
     }
+
     td {
         font-family: Monaco, Consolas, "Courier New", monospace;
         padding: 4px 8px;
         text-align: left;
     }
+
     caption {
         color: #fff;
     }
 }
+
 #noscript {
     background-color: #FFCBAF;
     border-radius: 5px;
@@ -506,37 +575,47 @@ $gradeColorB: #E69F5A;
 $gradeColorC: #E0C95A;
 $gradeColorD: #85BEBF;
 $gradeColorF: #4B88AA;
+
 svg path.grade_a {
     fill: $gradeColorA;
 }
+
 svg path.grade_b {
     fill: $gradeColorB;
 }
+
 svg path.grade_c {
     fill: $gradeColorC;
 }
+
 svg path.grade_d {
     fill: $gradeColorD;
 }
+
 svg path.grade_f {
     fill: $gradeColorF;
 }
+
 .grade_a {
     background-color: $gradeColorA;
     fill: $gradeColorA;
 }
+
 .grade_b {
     background-color: $gradeColorB;
     fill: $gradeColorB;
 }
+
 .grade_c {
     background-color: $gradeColorC;
     fill: $gradeColorC;
 }
+
 .grade_d {
     background-color: $gradeColorD;
     fill: $gradeColorD;
 }
+
 .grade_f {
     background-color: $gradeColorF;
     fill: $gradeColorF;
