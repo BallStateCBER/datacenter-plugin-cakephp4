@@ -26,26 +26,34 @@ $nextButton = $this->Paginator->next(
 );
 $next = $hasNext ? $nextButton : null;
 ?>
-<div class="paginator">
-    <ul class="pagination">
+<div class="paginator form-inline">
+    <ul class="unstyled form-group">
         <?= $prev ?>
         <?php if ($hasPrev || $hasNext) : ?>
-            <label class="sr-only" for="paginator-page-select">
-                Go to page
-            </label>
-            <select class="custom-select" id="paginator-page-select">
-                <?php for ($p = 1; $p <= $totalPages; $p++) : ?>
-                    <option
-                        <?php if ($p == $currentPage) :
+            <li>
+                <label class="sr-only" for="paginator-page-select">
+                    Go to page
+                </label>
+                <select class="custom-select" id="paginator-page-select">
+                    <?php for ($p = 1; $p <= $totalPages; $p++) : ?>
+                        <option
+                            <?php if ($p == $currentPage) :
                             ?>selected="selected"<?php
                         endif; ?>
-                        data-url="<?= $this->Paginator->generateUrl(['page' => $p]) ?>"
-                    >
-                        <?= $p ?>
-                    </option>
-                <?php endfor; ?>
-            </select>
+                            data-url="<?= $this->Paginator->generateUrl(['page' => $p]) ?>"
+                        >
+                            <?= $p ?>
+                        </option>
+                    <?php endfor; ?>
+                </select>
+            </li>
         <?php endif; ?>
         <?= $next ?>
     </ul>
 </div>
+<?php $this->Html->script('/data_center/js/pagination.js', ['block' => true]); ?>
+<?php $this->append('buffered'); ?>
+if (typeof pagination === 'undefined') {
+pagination = new Pagination();
+}
+<?php $this->end(); ?>

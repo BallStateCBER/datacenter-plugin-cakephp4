@@ -557,3 +557,14 @@ p.error,
 p.notice {
     clear: none;
 }
+
+/* Pagination element */
+div.paginator {
+    li {
+        margin-right: 1em;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
