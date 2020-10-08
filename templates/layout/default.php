@@ -84,10 +84,10 @@ use Cake\Core\Configure;
              */ ?>
             <div id="menu_col_stretcher" class="col_stretcher"></div>
             <div id="content_col_stretcher" class="col_stretcher"></div>
-            <div id="menu_column" class="col">
+            <div id="menu_column">
                 <?= $this->fetch('sidebar') ?>
             </div>
-            <main id="content_column" class="col container">
+            <main id="content_column">
                 <div id="flash-messages">
                     <?= $this->Flash->render() ?>
                 </div>

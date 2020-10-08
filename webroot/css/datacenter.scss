@@ -454,13 +454,15 @@ header {
         z-index: 0;
     }
 
-    > .col {
+    #menu_column {
         position: relative;
         z-index: 1;
     }
 
     #content_column {
         margin-left: 245px;
+        position: relative;
+        z-index: 1;
     }
 }
 
