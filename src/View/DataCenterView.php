@@ -18,13 +18,11 @@ namespace DataCenter\View;
 use Cake\View\View;
 
 /**
- * Application View
- *
- * Your application's default view class
+ * Data Center View
  *
  * @link https://book.cakephp.org/4/en/views.html#the-app-view
  */
-class AppView extends View
+class DataCenterView extends View
 {
     /**
      * Initialization hook method.
@@ -37,5 +35,8 @@ class AppView extends View
      */
     public function initialize(): void
     {
+        $this->loadHelper('Form', [
+            'templates' => 'DataCenter.bootstrap_form',
+        ]);
     }
 }
