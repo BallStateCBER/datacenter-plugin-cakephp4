@@ -44,13 +44,6 @@ class TagManager {
             this.setupAutosuggest();
         }
 
-        const rulesToggler = document.getElementById('new_tag_rules_toggler');
-        rulesToggler.addEventListener('click', function (event) {
-            event.preventDefault();
-            const rules = document.getElementById('new_tag_rules');
-            slideToggle(rules, 200);
-        });
-
         const exampleTag = document.getElementById('example_selectable_tag');
         exampleTag.addEventListener('click', function (event) {
             event.preventDefault();
