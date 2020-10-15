@@ -40,6 +40,6 @@ class DataCenterView extends View
         $this->loadHelper('Form', [
             'templates' => 'DataCenter.bootstrap_form',
         ]);
-        $this->loadHelper('Tag');
+        $this->loadHelper('DataCenter.Tag');
     }
 }
