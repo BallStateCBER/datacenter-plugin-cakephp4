@@ -21,6 +21,8 @@ use Cake\View\View;
  * Data Center View
  *
  * @link https://book.cakephp.org/4/en/views.html#the-app-view
+ *
+ * @property \DataCenter\View\Helper\TagHelper $Tag
  */
 class DataCenterView extends View
 {
@@ -38,5 +40,6 @@ class DataCenterView extends View
         $this->loadHelper('Form', [
             'templates' => 'DataCenter.bootstrap_form',
         ]);
+        $this->loadHelper('Tag');
     }
 }
