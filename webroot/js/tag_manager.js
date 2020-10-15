@@ -297,7 +297,7 @@ class TagManager {
     }
 
     tagIsSelected(tagId) {
-        const tag = document.querySelector('#selectedTags a[data-tag-id=' + tagId + ']');
+        const tag = document.querySelector(`#selectedTags a[data-tag-id="${tagId}"]`);
 
         return tag !== null;
     }
