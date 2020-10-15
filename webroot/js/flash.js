@@ -1,4 +1,4 @@
-class flashMessage {
+class FlashMessage {
     insert(message, className)
     {
         const alert = document.createElement('div');
