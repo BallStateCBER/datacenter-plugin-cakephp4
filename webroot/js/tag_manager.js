@@ -1,9 +1,14 @@
 class TagManager {
     /**
+     * Constructor
+     *
      * Options
      * - tags: A tree-shaped object containing nested tag groups
-     * - tagList: A one-dimensional array populated by createTagList()
-     * - tagsIds: An object with tag_name: tag_id pairs populated by createTagList()
+     * - selectedTags: An array of objects with 'id' and 'name' properties
+     * - showTree: (default: true)
+     * - showList: (default: false)
+     * - useAutocomplete: (default: false)
+     * - container: (default: '#available_tags')
      *
      * @param options
      */
@@ -13,12 +18,12 @@ class TagManager {
             ? document.querySelector(options.container)
             : document.getElementById('available_tags');
 
-        const showTree = options.hasOwnProperty('show_tree') ? options.showTree : true;
+        const showTree = options.hasOwnProperty('showTree') ? options.showTree : true;
         if (showTree) {
             this.createTagTree();
         }
 
-        const showList = options.hasOwnProperty('show_list') ? options.showList : false;
+        const showList = options.hasOwnProperty('showList') ? options.showList : false;
         this.tagList = [];
         this.tagsIds = {};
         if (showList) {
