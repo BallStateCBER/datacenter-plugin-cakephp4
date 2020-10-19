@@ -8,7 +8,7 @@ class TagManager {
      * - showTree: (default: true)
      * - showList: (default: false)
      * - useAutocomplete: (default: false)
-     * - container: (default: '#available_tags')
+     * - container: (default: '#available-tags')
      *
      * @param options
      */
@@ -16,7 +16,7 @@ class TagManager {
         this.tags = options.hasOwnProperty('tags') ? options.tags : [];
         this.container = options.hasOwnProperty('container')
             ? document.querySelector(options.container)
-            : document.getElementById('available_tags');
+            : document.getElementById('available-tags');
 
         const showTree = options.hasOwnProperty('showTree') ? options.showTree : true;
         if (showTree) {
@@ -44,7 +44,7 @@ class TagManager {
             this.setupAutosuggest();
         }
 
-        const exampleTag = document.getElementById('example_selectable_tag');
+        const exampleTag = document.getElementById('example-selectable-tag');
         exampleTag.addEventListener('click', function (event) {
             event.preventDefault();
         });
@@ -110,7 +110,7 @@ class TagManager {
 
     createTagTree() {
         const treeContainer = document.createElement('div');
-        treeContainer.id = 'available_tags_tree';
+        treeContainer.id = 'available-tags-tree';
         this.container.append(treeContainer);
         this.createTagTreeBranch(this.tags, treeContainer);
     }
@@ -161,10 +161,9 @@ class TagManager {
                 const collapsedIcon = document.createElement('a');
                 collapsedIcon.href = '#';
                 collapsedIcon.title = 'Click to expand/collapse';
-                const img = document.createElement('img');
-                img.src = '/data_center/img/icons/menu-collapsed.png';
-                img.classList.add('expand_collapse');
-                collapsedIcon.append(img);
+                const icon = document.createElement('i');
+                icon.className = 'fas fa-caret-right expand_collapse';
+                collapsedIcon.append(icon);
                 (function(children) {
                     collapsedIcon.addEventListener('click', function(event) {
                         event.preventDefault();
@@ -182,21 +181,24 @@ class TagManager {
                         const duration = 200;
                         slideToggle(childrenContainer);
                         setTimeout(function() {
-                            const iconImage = icon.querySelector('img.expand_collapse');
+                            const icon = icon.querySelector('i.expand_collapse');
                             const isVisible = childrenContainer.style.display !== 'none';
-                            iconImage.src = isVisible
-                                ? '/data_center/img/icons/menu-expanded.png'
-                                : '/data_center/img/icons/menu-collapsed.png';
+                            if (isVisible) {
+                                icon.classList.remove('fa-caret-right');
+                                icon.classList.add('fa-caret-down');
+                            } else {
+                                icon.classList.remove('fa-caret-down');
+                                icon.classList.add('fa-caret-right');
+                            }
                         }, duration);
                     });
                 })(children);
 
                 row.append(collapsedIcon);
             } else {
-                const leaf = document.createElement('img');
-                leaf.src = '/data_center/img/icons/menu-leaf.png';
-                leaf.classList.add('leaf');
-                row.append();
+                const leaf = document.createElement('i');
+                leaf.className = 'far fa-minus leaf';
+                row.append(leaf);
             }
 
             if (isSelectable) {
@@ -274,7 +276,7 @@ class TagManager {
         }
 
         const listContainer = document.createElement('div');
-        listContainer.id = 'available_tags_list';
+        listContainer.id = 'available-tags-list';
         listContainer.append(list);
         this.container.append(listContainer);
     }
@@ -306,7 +308,7 @@ class TagManager {
         if (selectedTags.length === 0) {
             return;
         }
-        document.getElementById('selected_tags_container').style.display = 'block';
+        document.getElementById('selected-tags-container').style.display = 'block';
         for (let i = 0; i < selectedTags.length; i++) {
             this.selectTag(selectedTags[i].id, selectedTags[i].name);
         }
@@ -325,7 +327,7 @@ class TagManager {
         availableTagLinks.forEach(function (availableTagLink) {
             availableTagLink.classList.remove('selected');
             const li = availableTagLink.parentElement;
-            const openTab = availableTagLink.closest('#available_tags_tree, #available_tags_list');
+            const openTab = availableTagLink.closest('#available-tags-tree, #available-tags-list');
             const tabIsVisible = openTab.style.display !== 'none';
 
             // If this link is in an unopened tab, don't animate anything
@@ -382,15 +384,15 @@ class TagManager {
 
     removeUnselectLink(unselectLink) {
         unselectLink.remove();
-        const selectedTags = document.getElementById('selectedTags');
+        const selectedTags = document.getElementById('selected-tags');
         if (selectedTags.childNodes.length === 0) {
-            const selectedTagsContainer = document.getElementById('selected_tags_container');
+            const selectedTagsContainer = document.getElementById('selected-tags-container');
             slideUp(selectedTagsContainer);
         }
     }
 
     selectTag(tagId, tagName) {
-        const selectedContainer = document.getElementById('selected_tags_container');
+        const selectedContainer = document.getElementById('selected-tags-container');
         if (!this.isVisible(selectedContainer)) {
             slideDown(selectedContainer);
         }
@@ -414,7 +416,7 @@ class TagManager {
             const tagId = unselectLink.dataset.tagId;
             self.unselectTag(tagId, unselectLink);
         });
-        const selectedTags = document.getElementById('selectedTags');
+        const selectedTags = document.getElementById('selected-tags');
         selectedTags.append(listItem);
 
         // If available tag has not yet been loaded, then there's no need to mess with its link
@@ -449,7 +451,7 @@ class TagManager {
 
     // Reference: https://tarekraafat.github.io/autoComplete.js/
     setupAutosuggest() {
-        const inputId = 'custom_tag_input';
+        const inputId = 'custom-tag-input';
         const input = document.getElementById(inputId);
         const self = this;
 

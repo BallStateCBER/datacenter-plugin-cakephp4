@@ -1,4 +1,4 @@
-#tag_editing {
+#tag-editing {
 	font-size: 90%;
 	line-height: 16px;
 	margin-bottom: 20px;
@@ -21,7 +21,7 @@
 	}
 }
 
-#available_tags {
+#available-tags {
 	border: 1px solid #aaa;
 	overflow: hidden;
 	padding: 5px;
@@ -63,19 +63,25 @@
 			}
 		}
 	}
+
+    .fa-minus,
+    .fa-caret-right,
+    .fa-caret-down {
+        margin-right: 1em;
+    }
 }
 
-#available_tags_tree {
+#available-tags-tree {
 	li {
 		list-style-type: none;
 	}
 }
 
-#selected_tags_container {
+#selected-tags-container {
 	margin-top: 15px;
 }
 
-#selected_tags {
+#selected-tags {
 	a:after {
 		content: ', ';
 	}
@@ -105,6 +111,6 @@
 	z-index: 10;
 }
 
-#custom_tag_input_wrapper {
+#custom-tag-input-wrapper {
 	margin-top: 15px;
 }

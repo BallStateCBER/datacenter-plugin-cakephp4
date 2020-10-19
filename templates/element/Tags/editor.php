@@ -15,33 +15,32 @@ echo $this->Html->script(
 );
 ?>
 
-<div class="input" id="tag_editing">
-    <div id="available_tags_container">
-        <div id="available_tags"></div>
-        <div id="popular_tags"></div>
+<div class="input" id="tag-editing">
+    <div id="available-tags-container">
+        <div id="available-tags"></div>
     </div>
     <div class="text-muted">
-        Click <img src="/data_center/img/icons/menu-collapsed.png" /> to expand groups.
+        Click <i class="fas fa-caret-right"></i> to expand groups.
         Click
-        <a href="#" title="Selectable tags will appear in blue" id="example_selectable_tag">selectable tags</a>
+        <a href="#" title="Selectable tags will appear in blue" id="example-selectable-tag">selectable tags</a>
         to select them.
     </div>
 
-    <div id="selected_tags_container" style="display: none;">
+    <div id="selected-tags-container" style="display: none;">
         <span class="label">
             Selected tags:
         </span>
-        <span id="selected_tags"></span>
+        <span id="selected-tags"></span>
         <div class="text-muted">
             Click on a tag to unselect it.
         </div>
     </div>
 
-    <div id="custom_tag_input_wrapper">
-        <label for="custom_tag_input">
+    <div id="custom-tag-input-wrapper">
+        <label for="custom-tag-input">
             Additional Tags
-            <span id="tag_autosuggest_loading" style="display: none;">
-                <img src="/data_center/img/loading_small.gif" alt="Working..." title="Working..." style="vertical-align:top;" />
+            <span id="tag-autosuggest-loading" style="display: none;">
+              <i class="fas fa-spinner fa-spin" title="Working..." style="vertical-align:top;"></i>
             </span>
         </label>
         <?= $this->Form->control(
@@ -49,7 +48,7 @@ echo $this->Html->script(
             [
                 'label' => false,
                 'class' => 'form-control',
-                'id' => 'custom_tag_input',
+                'id' => 'custom-tag-input',
             ]
         ) ?>
         <div class="text-muted">
