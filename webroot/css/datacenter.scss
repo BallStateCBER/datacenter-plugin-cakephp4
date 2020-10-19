@@ -166,6 +166,10 @@ select {
     border: 1px solid #7F9DB9;
 }
 
+.ck-editor__editable_inline {
+    min-height: 300px;
+}
+
 /* LAYOUT */
 .max_width {
     margin-left: auto;
