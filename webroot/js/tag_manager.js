@@ -119,7 +119,7 @@ class TagManager {
      * Appends to container a branch of the tag tree
      *
      * @param {Object[]} data - An array of tag objects
-     * @param {Object} container - $('#container_id')
+     * @param {Object} container - container element
      */
     createTagTreeBranch(data, container) {
         const list = document.createElement('ul');
