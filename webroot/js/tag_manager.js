@@ -197,7 +197,7 @@ class TagManager {
                 row.append(collapsedIcon);
             } else {
                 const leaf = document.createElement('i');
-                leaf.className = 'far fa-minus leaf';
+                leaf.className = 'fas fa-minus leaf';
                 row.append(leaf);
             }
 
