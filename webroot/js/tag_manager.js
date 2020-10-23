@@ -336,7 +336,7 @@ class TagManager {
         const self = this;
         availableTagLinks.forEach(function (availableTagLink) {
             availableTagLink.classList.remove('selected');
-            const li = availableTagLink.parentElement;
+            const li = availableTagLink.closest('li');
             const openTab = availableTagLink.closest('#available-tags-tree, #available-tags-list');
             const tabIsVisible = openTab.style.display !== 'none';
 
@@ -358,7 +358,7 @@ class TagManager {
                     self.removeUnselectLink(unselectLink);
                     return;
                 }
-                self.transfer(availableTagLink, unselectLink, function () {
+                self.transfer(unselectLink, availableTagLink, function () {
                     self.removeUnselectLink(unselectLink);
                 });
             };
@@ -367,11 +367,12 @@ class TagManager {
             if (tabIsVisible && li.style.display !== 'none') {
                 transferEffect();
 
-            // If the link container needs to be revealed (and would be visible during the reveal)
+                // If the link container needs to be revealed (and would be visible during the reveal)
             } else if (li.parentElement.style.display !== 'none') {
-                li.slideDown(200, function () {
+                slideDown(li, 200);
+                setTimeout(function () {
                     transferEffect();
-                });
+                }, 210);
 
             } else {
                 li.style.display = 'list-item';
@@ -381,10 +382,9 @@ class TagManager {
     }
 
     availableTagIsVisible(link, scrollableArea) {
-        if (this.isVisible(link)) {
+        if (!this.isVisible(link)) {
             return false;
         }
-
         return (link.offsetTop + link.offsetHeight > 0 && link.offsetTop < scrollableArea.offsetHeight);
     }
 
@@ -422,6 +422,7 @@ class TagManager {
             self.unselectTag(tagId, unselectLink);
         });
         const selectedTags = document.getElementById('selected-tags');
+        selectedTags.append(' ');
         selectedTags.append(listItem);
 
         // If available tag has not yet been loaded, then there's no need to mess with its link
