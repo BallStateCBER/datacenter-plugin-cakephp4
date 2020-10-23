@@ -299,7 +299,7 @@ class TagManager {
     }
 
     tagIsSelected(tagId) {
-        const tag = document.querySelector(`#selectedTags a[data-tag-id="${tagId}"]`);
+        const tag = document.querySelector(`#selected-tags a[data-tag-id="${tagId}"]`);
 
         return tag !== null;
     }
@@ -441,7 +441,7 @@ class TagManager {
                 }
             };
             if (self.isVisible(link)) {
-                const target = document.querySelectorAll(`#selectedTags a[data-tag-id="${tagId}"]`);
+                const target = selectedTags.querySelector(`a[data-tag-id="${tagId}"]`);
                 self.transfer(link, target, callback);
             } else {
                 callback();
