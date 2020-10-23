@@ -52,32 +52,42 @@ class TagManager {
 
     // Adapted from the jQuery UI "transfer" effect
     transfer(element, target, done) {
-        const targetFixed = target.style.position === 'fixed';
-        const body = document.querySelector('body');
-        const fixTop = targetFixed ? body.scrollTop : 0;
-        const fixLeft = targetFixed ? body.scrollLeft : 0;
-        const endPosition = target.getBoundingClientRect();
-        const animation = {
-            top: endPosition.top - fixTop,
-            left: endPosition.left - fixLeft,
-            height: window.getComputedStyle(target).height,
-            width: window.getComputedStyle(target).width,
-        };
+        // Add transition shape
+        const body = document.body;
+        const docEl = document.documentElement;
+        const scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+        const scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+        const targetIsFixed = target.style.position === 'fixed';
+        const fixTop = targetIsFixed ? scrollTop : 0;
+        const fixLeft = targetIsFixed ? scrollLeft : 0;
         const startPosition = element.getBoundingClientRect();
+        const duration = 500;
         const transfer = document.createElement('div');
         transfer.classList.add('ui-effects-transfer');
-        transfer.style.top = (startPosition.top - fixTop) + 'px';
-        transfer.style.left = (startPosition.left - fixLeft) + 'px';
-        transfer.style.height = window.getComputedStyle(element).height;
-        transfer.style.width = window.getComputedStyle(element).width;
-        transfer.style.position = targetFixed ? 'fixed' : 'absolute';
-        const duration = 1000;
+        transfer.style.top = (startPosition.top + element.ownerDocument.defaultView.pageYOffset - fixTop) + 'px';
+        transfer.style.left = (startPosition.left + element.ownerDocument.defaultView.pageXOffset - fixLeft) + 'px';
+        transfer.style.height = element.offsetHeight;
+        transfer.style.width = element.offsetWidth;
+        transfer.style.position = targetIsFixed ? 'fixed' : 'absolute';
         transfer.style.transitionDuration = duration + 'ms';
         body.append(transfer);
-        transfer.style.top = animation.top + 'px';
-        transfer.style.left = animation.left + 'px';
-        transfer.style.height = animation.height + 'px';
-        transfer.style.width = animation.width + 'px';
+
+        // Animate transition shape
+        const endPosition = target.getBoundingClientRect();
+        const animation = {
+            top: endPosition.top + target.ownerDocument.defaultView.pageYOffset - fixTop,
+            left: endPosition.left + target.ownerDocument.defaultView.pageXOffset - fixLeft,
+            height: target.offsetHeight,
+            width: target.offsetWidth,
+        };
+        requestAnimationFrame(() => {
+            transfer.style.top = animation.top + 'px';
+            transfer.style.left = animation.left + 'px';
+            transfer.style.height = animation.height + 'px';
+            transfer.style.width = animation.width + 'px';
+        });
+
+        // Remove shape and call done() callback
         setTimeout(function () {
             transfer.remove();
             if (typeof done !== 'undefined') {
@@ -392,11 +402,6 @@ class TagManager {
     }
 
     selectTag(tagId, tagName) {
-        const selectedContainer = document.getElementById('selected-tags-container');
-        if (!this.isVisible(selectedContainer)) {
-            slideDown(selectedContainer);
-        }
-
         // Do not add tag if it is already selected
         if (this.tagIsSelected(tagId)) {
             return;
@@ -442,7 +447,16 @@ class TagManager {
             };
             if (self.isVisible(link)) {
                 const target = selectedTags.querySelector(`a[data-tag-id="${tagId}"]`);
-                self.transfer(link, target, callback);
+                const selectedContainer = document.getElementById('selected-tags-container');
+                if (self.isVisible(selectedContainer)) {
+                    self.transfer(link, target, callback);
+                } else {
+                    const duration = 200;
+                    slideDown(selectedContainer, duration);
+                    setTimeout(function () {
+                        self.transfer(link, target, callback);
+                    }, duration);
+                }
             } else {
                 callback();
             }
