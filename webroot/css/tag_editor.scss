@@ -82,6 +82,10 @@
 }
 
 #selected-tags {
+    a {
+        white-space: nowrap;
+    }
+
 	a:after {
 		content: ', ';
 	}
