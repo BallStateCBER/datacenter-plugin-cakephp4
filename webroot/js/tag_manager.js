@@ -104,7 +104,7 @@ class TagManager {
     showError(message) {
         const alert = document.createElement('p');
         alert.classList.add('alert', 'alert-danger');
-        alert.innerHtml = message;
+        alert.innerHTML = message;
         this.container.prepend(alert);
     }
 
@@ -149,7 +149,7 @@ class TagManager {
                     tagLink.addEventListener('click', function (event) {
                         event.preventDefault();
                         const link = event.target;
-                        const tagName = link.innerHtml;
+                        const tagName = link.innerHTML;
                         const listItem = link.parentElement;
                         self.selectTag(tagId, tagName, listItem);
                     });
@@ -266,7 +266,7 @@ class TagManager {
                 tagLink.addEventListener('click', function (event) {
                     event.preventDefault();
                     const link = event.target;
-                    const tagName = link.innerHtml;
+                    const tagName = link.innerHTML;
                     const listItem = link.parentElement;
                     self.selectTag(tagId, tagName, listItem);
                 });
@@ -408,7 +408,7 @@ class TagManager {
         listItem.title = 'Click to remove';
         listItem.dataset.tagId = tagId;
         listItem.append(tagName);
-        listItem.innerHtml += `<input type="hidden" name="tags[]" value="${tagId}" />`;
+        listItem.innerHTML += `<input type="hidden" name="tags[]" value="${tagId}" />`;
         const self = this;
         listItem.addEventListener('click', function (event) {
             event.preventDefault();
