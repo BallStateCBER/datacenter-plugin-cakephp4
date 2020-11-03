@@ -1,5 +1,11 @@
 class FlashMessage {
-    insert(message, className)
+    /**
+     *
+     * @param message
+     * @param className 'error', 'success', or null for "info"
+     * @param container Either an element object or a selector string, or null to use default container
+     */
+    insert(message, className, container)
     {
         const alert = document.createElement('div');
         alert.className = 'alert alert-dismissible fade show';
@@ -18,7 +24,11 @@ class FlashMessage {
             '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
             '<span aria-hidden="true">&times;</span>' +
             '</button>';
-        const container = document.getElementById('flash-messages');
+        if (typeof container === 'undefined') {
+            container = document.getElementById('flash-messages');
+        } else if (typeof container === 'string') {
+            container = document.querySelector(container);
+        }
 
         alert.style.display = 'none';
         container.appendChild(alert);
