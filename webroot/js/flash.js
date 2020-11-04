@@ -20,18 +20,26 @@ class FlashMessage {
             default:
                 alert.className += ' alert-info';
         }
-        alert.innerHTML = message +
-            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
-            '<span aria-hidden="true">&times;</span>' +
-            '</button>';
+        const closeButton = document.createElement('button');
+        closeButton.setAttribute('type', 'button');
+        closeButton.className = 'close';
+        closeButton.setAttribute('aria-label', 'Close');
+        closeButton.innerHTML = '<span aria-hidden="true">&times;</span>';
+        closeButton.addEventListener('click', function () {
+            slideUp(alert);
+        });
+
+        alert.innerHTML = message;
+        alert.append(closeButton);
+        alert.style.display = 'none';
+
         if (typeof container === 'undefined') {
             container = document.getElementById('flash-messages');
         } else if (typeof container === 'string') {
             container = document.querySelector(container);
         }
-
-        alert.style.display = 'none';
         container.appendChild(alert);
+
         slideDown(alert);
     }
 }
