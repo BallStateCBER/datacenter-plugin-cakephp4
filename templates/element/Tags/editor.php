@@ -44,7 +44,7 @@ echo $this->Html->script(
             </span>
         </label>
         <?= $this->Form->control(
-            'customTags',
+            'custom_tags',
             [
                 'label' => false,
                 'class' => 'form-control',
