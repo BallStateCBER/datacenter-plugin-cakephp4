@@ -26,6 +26,10 @@ class TagManagerComponent extends Component
 
         $tagEntities = [];
         foreach ($tagNames as $tagName) {
+            if ($tagName == '') {
+                continue;
+            }
+
             // Fetch tag if it exists
             if ($tagsTable->exists(['name' => $tagName])) {
                 $tagEntities[] = $tagsTable
