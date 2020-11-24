@@ -99,6 +99,8 @@ use Cake\Core\Configure;
     <?php endif; ?>
 </div>
 
+<?= $this->fetch('below_content') ?>
+
 <?= $this->element('DataCenter.footer') ?>
 
 <noscript id="noscript" class="alert alert-warning">
