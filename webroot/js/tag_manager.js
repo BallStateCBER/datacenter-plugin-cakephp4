@@ -98,7 +98,7 @@ class TagManager {
 
     getTab(tabId, targetId, label, selected) {
         return '<li class="nav-item" role="presentation">' +
-            `<a class="nav-link active" id="${tabId}" data-toggle="tab" href="#${targetId}" role="tab" ` +
+            `<a class="nav-link active" id="${tabId}" data-bs-toggle="tab" href="#${targetId}" role="tab" ` +
             `aria-controls="home" aria-selected="${selected ? 'true' : 'false'}">${label}</a>` +
             '</li>';
     }
