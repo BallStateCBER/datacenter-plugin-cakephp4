@@ -2,21 +2,23 @@
 
 ## Installation
 
-Install this plugin into your CakePHP application using [composer](http://getcomposer.org).
+Install this plugin in your CakePHP application using [composer](http://getcomposer.org).
 
 ```
 composer require ballstatecber/datacenter-plugin-cakephp4:dev-master
 ```
 
-Add `$this->addPlugin('DataCenter');` to `bootstrap()` in `/src/Application.php`.
+Add `$this->addPlugin('DataCenter');` to `bootstrap()` in `src/Application.php`.
 
 ## Configuration
-Set `'data_center_subsite_title'` in `app_local.php`.
+ - Set `'data_center_subsite_title'` in `app_local.php`.
+ - Copy the plugin's `config/datacenter.php` configuration file to the application's `config` directory and change
+   values where appropriate
 
 ## Layout
 Set `$pageTitle` in each action's view variables where you would like to prepend the site title with the page title.
 
-Replace `/templates/layout/default.php` with the following:
+Replace `templates/layout/default.php` with the following:
 ```
 <?php
 /**
@@ -48,7 +50,7 @@ $this->assign('sidebar', $this->element('sidebar'));
 ```
 
 ## CSS
-Create `/webroot/css/style.scss` with these imports at the top:
+Create `webroot/css/style.scss` with these imports at the top:
 ```
 @import "./cake.css";
 @import "../../vendor/twbs/bootstrap/scss/bootstrap.scss";
@@ -59,3 +61,6 @@ If you're using the tag editor, also add
 ```
 @import "../../vendor/ballstatecber/datacenter-plugin-cakephp4/webroot/css/tag_editor.scss";
 ```
+
+## Authentication / Authorization
+Refer to the plugin's [auth docs](docs/auth.md) for information about using its standard auth setup.
