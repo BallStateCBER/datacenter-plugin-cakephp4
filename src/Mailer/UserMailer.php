@@ -8,7 +8,7 @@ use Cake\Mailer\Mailer;
 use Cake\Mailer\Message;
 use Cake\Routing\Router;
 
-class UserMailer extends Mailer
+class UserMailer extends DataCenterMailer
 {
     /**
      * Defines the "reset password" email
@@ -22,7 +22,6 @@ class UserMailer extends Mailer
         $this
             ->setTo($user->email)
             ->setSubject("$siteTitle - Reset password")
-            ->setEmailFormat(Message::MESSAGE_BOTH)
             ->setViewVars([
                 'url' => Router::url([
                     'controller' => 'Users',
@@ -34,7 +33,6 @@ class UserMailer extends Mailer
 
         $this
             ->viewBuilder()
-            ->setLayout('DataCenter.default')
             ->setTemplate('DataCenter.reset_password');
     }
 }
