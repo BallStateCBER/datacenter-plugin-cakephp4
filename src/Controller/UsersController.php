@@ -7,8 +7,8 @@ use App\Controller\AppController;
 use Cake\Core\Configure;
 use Cake\Http\Response;
 use Cake\I18n\Time;
-use Cake\Mailer\MailerAwareTrait;
 use Cake\Utility\Security;
+use DataCenter\Mailer\UserMailer;
 
 /**
  * Users Controller
@@ -18,8 +18,6 @@ use Cake\Utility\Security;
  */
 class UsersController extends AppController
 {
-    use MailerAwareTrait;
-
     /** @var string[] Login-related actions that are accessible to the public */
     public const AUTH_ACTIONS = [
         'login',
@@ -122,7 +120,7 @@ class UsersController extends AppController
             return;
         }
 
-        $this->getMailer('User')->send('resetPassword', [$user]);
+        (new UserMailer())->send('resetPassword', [$user]);
         $this->Flash->success('Please check your email for a password reset message');
     }
 

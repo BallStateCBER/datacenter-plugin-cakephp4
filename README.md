@@ -68,5 +68,14 @@ If you're using the tag editor, also add
 @import "../../vendor/ballstatecber/datacenter-plugin-cakephp4/webroot/css/tag_editor.scss";
 ```
 
+## Email
+- In `Mailer` classes, add the following to use the plugin's default template
+  ```php
+  $this
+    ->viewBuilder()
+    ->setLayout('DataCenter.default');
+  ```
+- Create elements called `email_signature_html.php` and `email_signature_text.php` to override default signatures
+
 ## Authentication / Authorization
 Refer to the plugin's [auth docs](docs/auth.md) for information about using its standard auth setup.
