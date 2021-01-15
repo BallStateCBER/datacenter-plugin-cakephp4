@@ -6,6 +6,7 @@ namespace DataCenter\Policy;
 use Authorization\IdentityInterface;
 use Cake\Http\Exception\InternalErrorException;
 use Cake\Http\ServerRequest;
+use DataCenter\Controller\UsersController;
 
 /**
  * Request policy
@@ -44,13 +45,7 @@ class RequestPolicy
         }
 
         // Check if this is a login-related action
-        $loginRelated = [
-            'login',
-            'logout',
-            'requestResetPassword',
-            'resetPassword',
-        ];
-        if ($controller == 'Users' && in_array($action, $controllerClass::ALLOW)) {
+        if ($controller == 'Users' && in_array($action, UsersController::AUTH_ACTIONS)) {
             return true;
         }
 
