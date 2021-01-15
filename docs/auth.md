@@ -2,7 +2,12 @@
 
 To use this plugin's auth setup, do the following.
 
-## Update Application
+## Configuration
+Enable the auth setup in your configuration data:
+1. Copy this plugin's `config/datacenter.php` configuration file to the app's `config` directory
+2. Update the app's copy of the file so that the `DataCenter.auth.enabled` value is `true`
+
+## Application
 Add to `src/Application.php`:
 ```php
 use DataCenter\Plugin as DataCenterPlugin;
@@ -41,13 +46,14 @@ public function getAuthenticationService(ServerRequestInterface $request): Authe
 }
 ```
 
-## Configure
-And enable the auth setup in your configuration data:
- 1. Copy this plugin's `config/datacenter.php` configuration file to the app's `config` directory
- 2. Update the app's copy of the file so that the `DataCenter.auth.enabled` value is `true`
 
-## Create ALLOW lists
-In each controller with publicly-accessible actions, list those action names in a class constant called `ALLOW`, e.g.
-```php
-public const ALLOW = ['index', 'view'];
-```
+## Controllers
+- Have `UsersController` extend `DataCenter\Controller\UsersController`
+ - In each controller with publicly-accessible actions, list those action names in a class constant called `ALLOW`, e.g.
+   ```php
+   public const ALLOW = ['index', 'view'];
+   ```
+
+## User model
+- Have the `User` class extend `DataCenter\Model\Entity\User`
+- Have the `UsersTable` class extend `DataCenter\Model\Table\UsersTable`

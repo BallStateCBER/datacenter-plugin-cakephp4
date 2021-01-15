@@ -9,6 +9,12 @@ return [
                 'controller' => 'Users',
                 'action' => 'login',
             ],
+            'logoutRedirect' => [
+                'prefix' => false,
+                'plugin' => null,
+                'controller' => 'Users',
+                'action' => 'login',
+            ],
         ],
     ],
 ];

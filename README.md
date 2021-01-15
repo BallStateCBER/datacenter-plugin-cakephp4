@@ -2,13 +2,13 @@
 
 ## Installation
 
-Install this plugin in your CakePHP application using [composer](http://getcomposer.org).
+- Install this plugin in your CakePHP application using [composer](http://getcomposer.org).
 
-```
-composer require ballstatecber/datacenter-plugin-cakephp4:dev-master
-```
-
-Add `$this->addPlugin('DataCenter');` in `App\Application:bootstrap()`.
+  ```
+  composer require ballstatecber/datacenter-plugin-cakephp4:dev-master
+  ```
+- Add `$this->addPlugin('DataCenter');` in `App\Application:bootstrap()`
+- Have `AppController` extend `DataCenter\Controller\AppController`
 
 ## Configuration
  - Set `'data_center_subsite_title'` in `app_local.php`.

@@ -3,21 +3,36 @@ declare(strict_types=1);
 
 namespace DataCenter\Controller;
 
-use App\Controller\AppController as BaseController;
+use Cake\Controller\Controller;
+use Cake\Core\Configure;
 
-class AppController extends BaseController
+/**
+ * Class AppController
+ *
+ * @package DataCenter\Controller
+ * @property \Authentication\Controller\Component\AuthenticationComponent $Authentication
+ * @property \Authorization\Controller\Component\AuthorizationComponent $Authorization
+ */
+class AppController extends Controller
 {
+    // A list of actions that unauthenticated users can access
+    public const ALLOW = [];
+
+    /**
+     * Initialization hook method
+     *
+     * @throws \Exception
+     * @return void
+     */
     public function initialize(): void
     {
         parent::initialize();
 
-        $this->loadComponent('RequestHandler');
-        $this->loadComponent('Flash');
+        if (Configure::read('DataCenter.auth.enabled')) {
+            $this->loadComponent('Authentication.Authentication');
+            $this->loadComponent('Authorization.Authorization');
 
-        /*
-         * Enable the following component for recommended CakePHP form protection settings.
-         * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
-         */
-        //$this->loadComponent('FormProtection');
+            $this->Authentication->allowUnauthenticated(static::ALLOW);
+        }
     }
 }
