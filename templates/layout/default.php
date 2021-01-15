@@ -7,7 +7,7 @@ use Cake\Core\Configure;
     <?= $this->Html->charset() ?>
 
     <?php if (Configure::read('googleTagManagerId')): ?>
-        <?= $this->element('google_tag_manager') ?>
+        <?= $this->element('DataCenter.google_tag_manager') ?>
     <?php endif; ?>
 
     <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
@@ -42,7 +42,7 @@ use Cake\Core\Configure;
 </head>
 <body class="default-layout">
 <?php if (Configure::read('googleTagManagerId')): ?>
-    <?= $this->element('google_tag_manager_noscript') ?>
+    <?= $this->element('DataCenter.google_tag_manager_noscript') ?>
 <?php endif; ?>
 
 <?= $this->fetch('top-html') ?>
