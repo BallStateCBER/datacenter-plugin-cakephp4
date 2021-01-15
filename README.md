@@ -8,16 +8,22 @@ Install this plugin in your CakePHP application using [composer](http://getcompo
 composer require ballstatecber/datacenter-plugin-cakephp4:dev-master
 ```
 
-Add `$this->addPlugin('DataCenter');` to `bootstrap()` in `src/Application.php`.
+Add `$this->addPlugin('DataCenter');` in `App\Application:bootstrap()`.
 
 ## Configuration
  - Set `'data_center_subsite_title'` in `app_local.php`.
  - Copy the plugin's `config/datacenter.php` configuration file to the application's `config` directory and change
    values where appropriate
 
-## Layout
-Set `$pageTitle` in each action's view variables where you would like to prepend the site title with the page title.
+## View layer
 
+### Page title
+ - Set `$pageTitle` in each action's view variables where you would like to prepend the site title with the page title
+   and display it as a header.
+ - Set the `$hidePageTitle` view variable to `true` to only put the title in `<title>` and prevent it from being
+   displayed.
+
+### Layout
 Replace `templates/layout/default.php` with the following:
 ```
 <?php
