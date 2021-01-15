@@ -49,9 +49,9 @@ class UsersController extends AppController
     /**
      * Login page
      *
-     * @return \Cake\Http\Response|null
+     * @return \Cake\Http\Response
      */
-    public function login(): ?Response
+    public function login(): Response
     {
         $result = $this->Authentication->getResult();
 
@@ -66,7 +66,7 @@ class UsersController extends AppController
 
         $this->set('pageTitle', 'Log in');
 
-        return null;
+        return $this->render('DataCenter.Users/login');
     }
 
     /**
@@ -86,10 +86,11 @@ class UsersController extends AppController
     /**
      * Sends the user an email with a password-resetting link
      *
-     * @return void
+     * @return \Cake\Http\Response
      */
-    public function requestResetPassword(): void
+    public function requestResetPassword(): Response
     {
+        $template = 'DataCenter.Users/request_reset_password';
         $user = $this->Users->newEmptyEntity();
         $this->set([
             'pageTitle' => 'Request Password Reset',
@@ -97,7 +98,7 @@ class UsersController extends AppController
         ]);
 
         if (!$this->getRequest()->is('post')) {
-            return;
+            return $this->render($template);
         }
 
         $email = $this->request->getData('email');
@@ -106,7 +107,7 @@ class UsersController extends AppController
         if (!$user) {
             $this->Flash->error('Email address not found');
 
-            return;
+            return $this->render($template);
         }
 
         // Update token
@@ -117,11 +118,13 @@ class UsersController extends AppController
         if (!$this->Users->save($user)) {
             $this->Flash->error('An error prevented your password reset token from being generated');
 
-            return;
+            return $this->render($template);
         }
 
         (new UserMailer())->send('resetPassword', [$user]);
         $this->Flash->success('Please check your email for a password reset message');
+
+        return $this->render($template);
     }
 
     /**
@@ -173,6 +176,6 @@ class UsersController extends AppController
             'user' => $user,
         ]);
 
-        return null;
+        return $this->render('DataCenter.Users/reset_password');
     }
 }
