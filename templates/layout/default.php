@@ -87,8 +87,10 @@ use Cake\Core\Configure;
                 <div id="flash-messages">
                     <?= $this->Flash->render() ?>
                 </div>
-                <?= $this->element('DataCenter.page_title') ?>
-                <?= $this->fetch('content') ?>
+                <div id="content">
+                    <?= $this->element('DataCenter.page_title') ?>
+                    <?= $this->fetch('content') ?>
+                </div>
                 <br class="clear" />
             </main>
         </div>
