@@ -41,11 +41,11 @@ $this->assign('sidebar', $this->element('sidebar'));
 
 <?php
     // If you'd like to have a masthead between the navbar and main content
-    $this->append('subsite_title');
+    $this->append('site_title');
 ?>
-    <h1 id="subsite_title" class="max_width">
+    <h1 id="site-title" class="max_width">
         <a href="/">
-            <img src="/img/logo.jpg" alt="<?= Configure::read('data_center_subsite_title') ?>" />
+            <img src="/img/logo.jpg" alt="<?= Configure::read('DataCenter.siteTitle') ?>" />
         </a>
     </h1>
 <?php $this->end(); ?>

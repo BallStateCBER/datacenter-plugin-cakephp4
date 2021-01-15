@@ -67,9 +67,7 @@ use Cake\Core\Configure;
     </div>
 </header>
 
-<?php if ($this->fetch('subsite_title')): ?>
-    <?= $this->fetch('subsite_title') ?>
-<?php endif; ?>
+<?= $this->fetch('site_title') ?>
 
 <div id="content_wrapper" class="max_width">
     <?php if ($this->fetch('sidebar')): ?>
