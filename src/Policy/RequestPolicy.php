@@ -32,14 +32,28 @@ class RequestPolicy
             return true;
         }
 
-        // Fetch actions that are accessible to unauthenticated users
+        // Check if controller defined this as an action accessible to unauthenticated users
         $controller = $request->getParam('controller');
         $controllerClass = 'App\Controller\\' . $controller . 'Controller';
         if (!defined("$controllerClass::ALLOW")) {
             throw new InternalErrorException($controllerClass . ' allow list not found');
         }
         $action = $request->getParam('action');
+        if (in_array($action, $controllerClass::ALLOW)) {
+            return true;
+        }
 
-        return in_array($action, $controllerClass::ALLOW);
+        // Check if this is a login-related action
+        $loginRelated = [
+            'login',
+            'logout',
+            'requestResetPassword',
+            'resetPassword',
+        ];
+        if ($controller == 'Users' && in_array($action, $controllerClass::ALLOW)) {
+            return true;
+        }
+
+        return false;
     }
 }
