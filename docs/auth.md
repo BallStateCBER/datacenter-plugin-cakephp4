@@ -57,3 +57,10 @@ public function getAuthenticationService(ServerRequestInterface $request): Authe
 ## User model
 - Have the `User` class extend `DataCenter\Model\Entity\User`
 - Have the `UsersTable` class extend `DataCenter\Model\Table\UsersTable`
+
+## Templates
+To override the templates for `UsersController` actions managed by the plugin (such as the login page), create files in
+the application such as this:
+```
+templates/plugin/DataCenter/Users/login.php
+```
