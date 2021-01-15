@@ -13,11 +13,11 @@ use Cake\Core\Configure;
     <link rel="dns-prefetch" href="https://ajax.googleapis.com" />
     <title>
         <?php
-        $title = Configure::read('data_center_subsite_title');
-        if (isset($pageTitle) && $pageTitle) {
-            $title = $pageTitle . ' - ' . $title;
-        }
-        echo $title;
+            $title = Configure::read('DataCenter.siteTitle');
+            if (isset($pageTitle) && $pageTitle) {
+                $title = $pageTitle . ' - ' . $title;
+            }
+            echo $title;
         ?>
     </title>
     <meta name="title" content="<?= $title ?>" />

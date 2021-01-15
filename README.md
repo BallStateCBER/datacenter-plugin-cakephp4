@@ -11,9 +11,9 @@
 - Have `AppController` extend `DataCenter\Controller\AppController`
 
 ## Configuration
- - Set `'data_center_subsite_title'` in `app_local.php`.
- - Copy the plugin's `config/datacenter.php` configuration file to the application's `config` directory and change
-   values where appropriate
+ - Copy the plugin's `config/datacenter.php` configuration file to the application's `config` directory
+ - Set `'DataCenter.siteTitle'` and `'DataCenter.siteUrl'` in the copy
+ - Change other values as appropriate
 
 ## View layer
 

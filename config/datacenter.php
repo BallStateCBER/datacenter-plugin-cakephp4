@@ -16,5 +16,7 @@ return [
                 'action' => 'login',
             ],
         ],
+        'siteTitle' => '',
+        'siteUrl' => '',
     ],
 ];
