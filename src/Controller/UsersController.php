@@ -154,7 +154,7 @@ class UsersController extends AppController
             return $this->redirect($loginUrl);
         }
 
-        if ($this->request->is('post')) {
+        if (!$this->request->is('get')) {
             $data = $this->request->getData();
             $data['password'] = $data['new_password'];
             $user = $this->Users->patchEntity($user, $data, [
