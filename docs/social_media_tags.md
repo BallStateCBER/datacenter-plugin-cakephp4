@@ -7,7 +7,7 @@ editing the plugin's configuration and setting view variables.
 - Enter a general description of the website in `DataCenter.openGraphDescription` to be used in the absence of a
   page-specific description
 - In `config/datacenter.php`, the `DataCenter.defaultOpenGraphLogoPath` should be set with a value such as
-  `'/img/logo/og_logo.png'`
+  `'https://subdomain.cberdata.org/img/logo/og_logo.png', true)`
 - If a different default image is desired for Twitter, set that path as `DataCenter.defaultTwitterLogoPath`
 - If a Facebook app is associated with this website, set the value `DataCenter.facebookAppId`
 - If this website is associated with a different Twitter handle than @BallStateCBER, set `DataCenter.twitterUsername`
@@ -21,14 +21,14 @@ editing the plugin's configuration and setting view variables.
   $this->set('ogMetaTags', [
       'og:description' => $article->body,
       'og:image' => [
-          "/img/articles/{$article->id}/main.png",
-          "/img/articles/{$article->id}/1.png",
-          "/img/articles/{$article->id}/2.png",
+          Router::url("/img/articles/{$article->id}/main.png", true),
+          Router::url("/img/articles/{$article->id}/1.png", true),
+          Router::url("/img/articles/{$article->id}/2.png", true),
       ],
-      'twitter:image' => "/img/articles/{$article->id}/main.square.png",
+      'twitter:image' => Router::url("/img/articles/{$article->id}/main.square.png", true),
 
       // Specify canonical URL as a string if this page can be accessed via multiple URLs
-      'og:url' => Router::url([...]),
+      'og:url' => Router::url([...], true),
 
       // The @username of the content creator, e.g. '@articleAuthorName'
       'twitter:creator' => $article->author->twitter_handle,
@@ -39,6 +39,7 @@ editing the plugin's configuration and setting view variables.
   ```
 - `$pageTitle` and `DataCenter.siteTitle` are automatically integrated into the default meta tags
 - `og:description` will be automatically truncated
+- Note that all URLs must be full URLs
 
 ## Image dimensions
 As of January 2020, (Facebook recommends)[https://developers.facebook.com/docs/sharing/webmasters/images/] that images
