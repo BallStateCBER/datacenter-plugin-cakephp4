@@ -145,7 +145,7 @@ class UsersController extends AppController
             return $this->redirect($loginUrl);
         }
 
-        $expired = $user->token_expires->wasWithinLast('1 day');
+        $expired = !$user->token_expires->wasWithinLast('1 day');
         if ($expired) {
             $this->Flash->error(
                 'The provided password reset token has expired. ' .
