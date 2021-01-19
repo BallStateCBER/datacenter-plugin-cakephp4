@@ -155,20 +155,22 @@ class UsersController extends AppController
             return $this->redirect($loginUrl);
         }
 
-        $data = $this->request->getData();
-        $data['password'] = $data['new_password'];
-        $user = $this->Users->patchEntity($user, $data, [
-            'fields' => [
-                'new_password',
-                'password',
-                'password_confirm',
-            ],
-        ]);
+        if ($this->request->is('post')) {
+            $data = $this->request->getData();
+            $data['password'] = $data['new_password'];
+            $user = $this->Users->patchEntity($user, $data, [
+                'fields' => [
+                    'new_password',
+                    'password',
+                    'password_confirm',
+                ],
+            ]);
 
-        if ($this->Users->save($user)) {
-            $this->Flash->success('Your password has been successfully updated. You may now log in.');
+            if ($this->Users->save($user)) {
+                $this->Flash->success('Your password has been successfully updated. You may now log in.');
 
-            return $this->redirect($loginUrl);
+                return $this->redirect($loginUrl);
+            }
         }
 
         $this->set([
