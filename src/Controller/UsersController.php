@@ -157,11 +157,15 @@ class UsersController extends AppController
         if (!$this->request->is('get')) {
             $data = $this->request->getData();
             $data['password'] = $data['new_password'];
+            $data['token'] = null;
+            $data['token_expires'] = null;
             $user = $this->Users->patchEntity($user, $data, [
                 'fields' => [
                     'new_password',
                     'password',
                     'password_confirm',
+                    'token',
+                    'token_expires',
                 ],
             ]);
 
