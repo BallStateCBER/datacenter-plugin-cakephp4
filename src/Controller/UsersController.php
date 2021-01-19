@@ -37,11 +37,7 @@ class UsersController extends AppController
         parent::initialize();
 
         if (Configure::read('DataCenter.auth.enabled')) {
-            $allowedActions = self::AUTH_ACTIONS;
-            $controllerClass = 'App\Controller\UsersController';
-            if (defined("$controllerClass::ALLOW")) {
-                $allowedActions = array_merge($allowedActions, $controllerClass::ALLOW);
-            }
+            $allowedActions = array_merge(self::AUTH_ACTIONS, static::ALLOW);
             $this->Authentication->allowUnauthenticated($allowedActions);
         }
     }
