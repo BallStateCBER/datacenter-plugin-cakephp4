@@ -30,9 +30,6 @@ editing the plugin's configuration and setting view variables.
       // Specify canonical URL as a string if this page can be accessed via multiple URLs
       'og:url' => Router::url([...], true),
 
-      // The @username of the content creator, e.g. '@articleAuthorName'
-      'twitter:creator' => $article->author->twitter_handle,
-
       // If this is an article-like page
       'og:type' => 'article',
   ]);
