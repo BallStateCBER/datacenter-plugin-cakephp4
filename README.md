@@ -75,3 +75,7 @@ If you're using the tag editor, also add
 
 ## Authentication / Authorization
 Refer to the plugin's [auth docs](docs/auth.md) for information about using its standard auth setup.
+
+## Social media meta tags
+Refer to the plugin's [social media tag docs](docs/social_media_tags.md) for information about setting information for
+social media websites to use when scraping a page.

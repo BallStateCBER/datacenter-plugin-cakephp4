@@ -18,5 +18,13 @@ return [
         ],
         'siteTitle' => '',
         'siteUrl' => '',
+
+        // Use full URL or leading slash, e.g. '/img/logo/og_logo.png'
+        'defaultOpenGraphLogoPath' => '',
+        'defaultTwitterLogoPath' => '',
+
+        'openGraphDescription' => '',
+        'facebookAppId' => '',
+        'twitterUsername' => '@BallStateCBER',
     ],
 ];
