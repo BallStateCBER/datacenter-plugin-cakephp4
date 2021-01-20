@@ -7,7 +7,7 @@
 ?>
 
 <?php if (($pageTitle ?? false) && !($hidePageTitle ?? false)): ?>
-    <h1 class="page_title">
+    <h1 class="page-title">
         <?php if ($linkPageTitle ?? false): ?>
             <?= $this->Html->link(
                 $pageTitle,
