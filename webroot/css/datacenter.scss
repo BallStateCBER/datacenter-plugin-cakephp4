@@ -153,14 +153,6 @@ a {
             text-decoration: underline;
         }
     }
-
-    &.with_icon {
-        text-decoration: none;
-
-        img {
-            vertical-align: text-top;
-        }
-    }
 }
 
 /* TAG CLOUDS */
@@ -270,47 +262,6 @@ header {
     }
 }
 
-#login_out {
-    float: right;
-    font-size: 80%;
-    line-height: 15px;
-    margin-right: 10px;
-    text-transform: uppercase;
-
-    a {
-        color: #cc0000;
-    }
-}
-
-#search {
-    float: right;
-    line-height: 15px;
-    padding-top: 2px;
-
-    input[type="text"] {
-        background-color: #cadddc;
-        border: 0;
-        float: left;
-        font-size: 80%;
-        height: 15px;
-        margin: 0;
-        padding: 2px 0;
-    }
-
-    input[type="submit"] {
-        background-color: #cc0000;
-        border: 0;
-        color: #fff;
-        float: left;
-        font-size: 60%;
-        font-weight: bold;
-        height: 15px;
-        margin: 0;
-        padding: 2px 0;
-        text-transform: uppercase;
-    }
-}
-
 #data_center_logo {
     bottom: 0;
     clear: left;
@@ -334,45 +285,6 @@ header {
 #content {
     background-color: #FFF;
     padding: 15px;
-}
-
-#load_selection_wrapper {
-    text-align: center;
-}
-
-#load_selection {
-    position: relative;
-    text-align: left;
-
-    h1 {
-        font-size: 160%;
-        font-weight: bold;
-    }
-
-    h2 {
-        font-size: 130%;
-        font-weight: bold;
-    }
-
-    aside {
-        float: right;
-        text-align: center;
-        width: 300px;
-
-        h2 {
-            font-size: 120%;
-            text-align: left;
-        }
-
-        p {
-            margin: 0 0 10px 0;
-            text-align: left;
-
-            &:last-of-type {
-                margin-bottom: 15px;
-            }
-        }
-    }
 }
 
 #footer {
