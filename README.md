@@ -22,6 +22,7 @@
    and display it as a header.
  - Set the `$hidePageTitle` view variable to `true` to only put the title in `<title>` and prevent it from being
    displayed.
+ - Set `$linkPageTitle` to `true` to link the page title to the current page.
 
 ### Layout
 Replace `templates/layout/default.php` with the following:
