@@ -1,8 +1,10 @@
-$maxContentWidth: 1000px;
+$headings-color: #000;
 $headings-font-family: Asap, "Lucida Sans", Helvetica, Arial, sans-serif;
 $headings-font-weight: bold;
 $headings-line-height: inherit;
-$headings-color: #000;
+$link-color: #0099BB;
+$link-hover-color: $link-color;
+$maxContentWidth: 1000px;
 
 /**************
  * BASIC TAGS *
@@ -121,26 +123,6 @@ acronym {
     cursor: default;
 }
 
-a {
-    color: #0099BB;
-    cursor: pointer;
-    font-weight: inherit;
-    text-decoration: none;
-
-    &:visited:not(.btn),
-    &:active:not(.btn) {
-        color: #008CA8;
-    }
-
-    &:hover {
-        text-decoration: underline;
-
-        span {
-            text-decoration: underline;
-        }
-    }
-}
-
 /**********
  * LAYOUT *
  **********/
@@ -191,7 +173,10 @@ body {
             right: 0;
             position: absolute;
 
-            a {
+            a:link,
+            a:visited,
+            a:hover,
+            a:active {
                 background-color: #CC0000;
                 color: #FFF;
                 display: block;
@@ -201,6 +186,7 @@ body {
                 margin: 0 2px -5px 2px;
                 padding: 5px;
                 text-align: center;
+                text-decoration: none;
                 text-transform: uppercase;
                 vertical-align: text-bottom;
 
@@ -208,14 +194,13 @@ body {
                     margin-right: 0;
                 }
 
-                &:hover {
-                    background-color: #3a4040;
-                    text-decoration: none;
-                }
-
                 &.selected {
                     background-color: #3A4040;
                 }
+            }
+
+            a:hover {
+                background-color: #3a4040;
             }
         }
     }
