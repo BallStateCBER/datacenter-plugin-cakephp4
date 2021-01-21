@@ -11,7 +11,7 @@
                 &copy; Center for Business and Economic Research, Ball State University
             </p>
         </div>
-        <section>
+        <div>
             <section>
                 <?php if ($this->fetch('footer_about')): ?>
                     <?= $this->fetch('footer_about') ?>
@@ -56,6 +56,6 @@
                     <dd><a href="https://www.twitter.com/BallStateCBER">www.twitter.com/BallStateCBER</a></dd>
                 </dl>
             </section>
-        </section>
+        </div>
     </div>
 </footer>

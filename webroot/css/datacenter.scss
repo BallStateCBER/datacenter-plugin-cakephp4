@@ -229,18 +229,16 @@ body {
         min-width: 1000px;
         text-align: left;
 
-        .max_width > section {
-            > section {
-                display: block;
-                float: left;
-                margin-left: 15px;
-                width: 325px;
+        section {
+            display: block;
+            float: left;
+            margin-left: 15px;
+            width: 325px;
 
-                h3 {
-                    font-size: 125%;
-                    font-weight: bold;
-                    margin: 15px 0 0 0;
-                }
+            h3 {
+                font-size: 125%;
+                font-weight: bold;
+                margin: 15px 0 0 0;
             }
         }
 
