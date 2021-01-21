@@ -4,7 +4,9 @@ $headings-font-weight: bold;
 $headings-line-height: inherit;
 $headings-color: #000;
 
-/* BASIC TAGS */
+/**************
+ * BASIC TAGS *
+ **************/
 html,
 body {
     background-color: #3A4040;
@@ -13,16 +15,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-body.default-layout {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.page-header {
-    margin-top: 0;
 }
 
 h1 {
@@ -129,12 +121,6 @@ acronym {
     cursor: default;
 }
 
-br.clear {
-    clear: both;
-    height: 0;
-}
-
-/* LINKS */
 a {
     color: #0099BB;
     cursor: pointer;
@@ -155,28 +141,23 @@ a {
     }
 }
 
-/* TAG CLOUDS */
-.tag_cloud {
-    a:nth-child(even) {
-        color: #CC0000;
-    }
+/**********
+ * LAYOUT *
+ **********/
+#flash-messages {
+    padding: 5px;
 }
 
-/* FORMS */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-textarea,
-select {
-    background-color: #FAFAFF;
-    border: 1px solid #7F9DB9;
+body.default-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.ck-editor__editable_inline {
-    min-height: 300px;
+.page-header {
+    margin-top: 0;
 }
 
-/* LAYOUT */
 .max_width {
     margin-left: auto;
     margin-right: auto;
@@ -285,6 +266,10 @@ header {
 #content {
     background-color: #FFF;
     padding: 15px;
+}
+
+footer {
+    flex: none;
 }
 
 #footer {
@@ -466,26 +451,6 @@ header {
     padding: 15px;
 }
 
-footer {
-    flex: none;
-}
-
-.cake-sql-log {
-    table {
-        background: #f4f4f4;
-    }
-
-    td {
-        font-family: Monaco, Consolas, "Courier New", monospace;
-        padding: 4px 8px;
-        text-align: left;
-    }
-
-    caption {
-        color: #fff;
-    }
-}
-
 #noscript {
     background-color: #FFCBAF;
     border-radius: 5px;
@@ -501,31 +466,49 @@ footer {
     z-index: 10;
 }
 
-/* GRADE COLORS */
+/*********
+ * FORMS *
+ *********/
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+    background-color: #FAFAFF;
+    border: 1px solid #7F9DB9;
+}
+
+/****************
+ * GRADE COLORS *
+ ****************/
 $gradeColorA: #CC553E;
 $gradeColorB: #E69F5A;
 $gradeColorC: #E0C95A;
 $gradeColorD: #85BEBF;
 $gradeColorF: #4B88AA;
 
-svg path.grade_a {
-    fill: $gradeColorA;
-}
+svg {
+    path {
+        &.grade_a {
+            fill: $gradeColorA;
+        }
 
-svg path.grade_b {
-    fill: $gradeColorB;
-}
+        &.grade_b {
+            fill: $gradeColorB;
+        }
 
-svg path.grade_c {
-    fill: $gradeColorC;
-}
+        &.grade_c {
+            fill: $gradeColorC;
+        }
 
-svg path.grade_d {
-    fill: $gradeColorD;
-}
+        &.grade_d {
+            fill: $gradeColorD;
+        }
 
-svg path.grade_f {
-    fill: $gradeColorF;
+        &.grade_f {
+            fill: $gradeColorF;
+        }
+    }
 }
 
 .grade_a {
@@ -553,14 +536,25 @@ svg path.grade_f {
     fill: $gradeColorF;
 }
 
-/* BOOTSTRAP */
+/*******************************
+ * OVERRIDING BOOTSTRAP STYLES *
+ *******************************/
 .dropdown-menu {
     > li {
         list-style-type: none;
     }
 }
 
-/* UNDOING CAKEPHP STYLES */
+/******************************
+ * OVERRIDING CKEDITOR STYLES *
+ ******************************/
+.ck-editor__editable_inline {
+    min-height: 300px;
+}
+
+/*****************************
+ * OVERRIDING CAKEPHP STYLES *
+ *****************************/
 .cake-error,
 .cake-debug,
 .notice,
@@ -569,7 +563,30 @@ p.notice {
     clear: none;
 }
 
-/* Pagination element */
+.cake-sql-log {
+    table {
+        background: #f4f4f4;
+    }
+
+    td {
+        font-family: Monaco, Consolas, "Courier New", monospace;
+        padding: 4px 8px;
+        text-align: left;
+    }
+
+    caption {
+        color: #fff;
+    }
+}
+
+/*****************
+ * MISCELLANEOUS *
+ *****************/
+br.clear {
+    clear: both;
+    height: 0;
+}
+
 div.paginator {
     ul {
         margin: auto;
@@ -584,6 +601,8 @@ div.paginator {
     }
 }
 
-#flash-messages {
-    padding: 5px;
+.tag_cloud {
+    a:nth-child(even) {
+        color: #CC0000;
+    }
 }
