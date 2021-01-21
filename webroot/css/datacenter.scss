@@ -144,14 +144,138 @@ a {
 /**********
  * LAYOUT *
  **********/
-#flash-messages {
-    padding: 5px;
+body {
+    &.default-layout {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    > header {
+        background-color: #fff;
+        border-bottom: 5px solid #cc0000;
+        flex: none;
+        height: 70px;
+        line-height: inherit;
+        min-width: 1000px;
+        padding: 0;
+        position: relative;
+
+        .max_width {
+            height: 65px;
+            position: relative;
+        }
+
+        h1 {
+            color: #cc0000;
+            float: left;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-top: 15px;
+            text-transform: uppercase;
+            a {
+                color: #cc0000;
+
+                &:hover {
+                    color: #000;
+                    text-decoration: none;
+                }
+            }
+        }
+
+        nav {
+            float: right;
+            margin-top: 10px;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+
+            a {
+                background-color: #CC0000;
+                color: #FFF;
+                display: block;
+                float: left;
+                font-size: 10px;
+                font-weight: bold;
+                margin: 0 2px -5px 2px;
+                padding: 5px;
+                text-align: center;
+                text-transform: uppercase;
+                vertical-align: text-bottom;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    background-color: #3a4040;
+                    text-decoration: none;
+                }
+
+                &.selected {
+                    background-color: #3A4040;
+                }
+            }
+        }
+    }
+
+    > footer {
+        background-color: #fff;
+        border-top: 5px solid #cc0000;
+        flex: none;
+        font-size: 90%;
+        line-height: 1.3em;
+        min-width: 1000px;
+        text-align: left;
+
+        .max_width > section {
+            > section {
+                display: block;
+                float: left;
+                margin-left: 15px;
+                width: 325px;
+
+                h3 {
+                    font-size: 125%;
+                    font-weight: bold;
+                    margin: 15px 0 0 0;
+                }
+            }
+        }
+
+        address {
+            font-style: normal;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            clear: both;
+        }
+
+        dl {
+            margin: 0;
+            padding: 0;
+        }
+
+        dt {
+            clear: left;
+            float: left;
+            margin: 0;
+            padding: 0 5px 0 0;
+        }
+
+        dd {
+            clear: right;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+    }
 }
 
-body.default-layout {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+#flash-messages {
+    padding: 5px;
 }
 
 .page-header {
@@ -169,78 +293,6 @@ body.default-layout {
     margin-right: auto;
     padding: 10px;
     width: $maxContentWidth - 20px;
-}
-
-header {
-    flex: none;
-    line-height: inherit;
-    padding: 0;
-}
-
-#header_top {
-    background-color: #fff;
-    border-bottom: 5px solid #cc0000;
-    height: 70px;
-    min-width: 1000px;
-    position: relative;
-
-    .max_width {
-        height: 65px;
-        position: relative;
-    }
-
-    h1 {
-        color: #cc0000;
-        float: left;
-        font-size: 11px;
-        font-weight: bold;
-        letter-spacing: 2px;
-        margin-top: 15px;
-        text-transform: uppercase;
-        a {
-            color: #cc0000;
-
-            &:hover {
-                color: #000;
-                text-decoration: none;
-            }
-        }
-    }
-
-    nav {
-        float: right;
-        margin-top: 10px;
-        bottom: 0;
-        right: 0;
-        position: absolute;
-
-        a {
-            background-color: #CC0000;
-            color: #FFF;
-            display: block;
-            float: left;
-            font-size: 10px;
-            font-weight: bold;
-            margin: 0 2px -5px 2px;
-            padding: 5px;
-            text-align: center;
-            text-transform: uppercase;
-            vertical-align: text-bottom;
-
-            &:last-child {
-                margin-right: 0;
-            }
-
-            &:hover {
-                background-color: #3a4040;
-                text-decoration: none;
-            }
-
-            &.selected {
-                background-color: #3A4040;
-            }
-        }
-    }
 }
 
 #data_center_logo {
@@ -266,62 +318,6 @@ header {
 #content {
     background-color: #FFF;
     padding: 15px;
-}
-
-footer {
-    flex: none;
-}
-
-#footer {
-    background-color: #fff;
-    border-top: 5px solid #cc0000;
-    font-size: 90%;
-    line-height: 1.3em;
-    min-width: 1000px;
-    text-align: left;
-
-    .max_width > section {
-        > section {
-            display: block;
-            float: left;
-            margin-left: 15px;
-            width: 325px;
-
-            h3 {
-                font-size: 125%;
-                font-weight: bold;
-                margin: 15px 0 0 0;
-            }
-        }
-    }
-
-    address {
-        font-style: normal;
-        margin-bottom: 10px;
-    }
-
-    hr {
-        clear: both;
-    }
-
-    dl {
-        margin: 0;
-        padding: 0;
-    }
-
-    dt {
-        clear: left;
-        float: left;
-        margin: 0;
-        padding: 0 5px 0 0;
-    }
-
-    dd {
-        clear: right;
-        float: left;
-        margin: 0;
-        padding: 0;
-    }
 }
 
 #cberlogo_copyright {

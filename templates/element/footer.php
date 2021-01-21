@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer>
     <div class="max_width">
         <div id="cberlogo_copyright">
             <a href="https://www.bsu.edu/cber">

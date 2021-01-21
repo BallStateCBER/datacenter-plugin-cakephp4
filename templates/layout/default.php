@@ -48,7 +48,7 @@ use Cake\Core\Configure;
 
         <?= $this->fetch('top-html') ?>
 
-        <header id="header_top">
+        <header>
             <div class="max_width">
                 <h1>
                     <a href="https://bsu.edu/cber">
