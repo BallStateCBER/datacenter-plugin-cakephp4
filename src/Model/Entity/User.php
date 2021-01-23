@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace DataCenter\Model\Entity;
 
+use Authentication\IdentityInterface;
 use Authentication\PasswordHasher\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
@@ -15,7 +16,7 @@ use Cake\ORM\Entity;
  * @property string $token
  * @property \Cake\I18n\FrozenTime $token_expires
  */
-class User extends Entity
+class User extends Entity implements IdentityInterface
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -55,5 +56,25 @@ class User extends Entity
         }
 
         return null;
+    }
+
+    /**
+     * Authentication\IdentityInterface method
+     *
+     * @return int
+     */
+    public function getIdentifier(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * Authentication\IdentityInterface method
+     *
+     * @return \Authentication\IdentityInterface
+     */
+    public function getOriginalData(): IdentityInterface
+    {
+        return $this;
     }
 }
