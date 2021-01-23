@@ -100,7 +100,7 @@ class Plugin extends BasePlugin
     public static function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {
         $service = new AuthenticationService();
-        $loginUrl = Configure::read('DataCenter.auth.loginUrl');
+        $loginUrl = Router::url(Configure::read('DataCenter.auth.loginUrl'));
 
         // Define where users should be redirected to when they are not authenticated
         $service->setConfig([
