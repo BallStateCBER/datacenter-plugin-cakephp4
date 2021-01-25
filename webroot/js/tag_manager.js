@@ -413,7 +413,7 @@ class TagManager {
         listItem.title = 'Click to remove';
         listItem.dataset.tagId = tagId;
         listItem.append(tagName);
-        listItem.innerHTML += `<input type="hidden" name="tags[]" value="${tagId}" />`;
+        listItem.innerHTML += `<input type="hidden" name="tags[_ids][]" value="${tagId}" />`;
         const self = this;
         listItem.addEventListener('click', function (event) {
             event.preventDefault();
