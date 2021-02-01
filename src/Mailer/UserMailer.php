@@ -19,7 +19,10 @@ class UserMailer extends DataCenterMailer
     public function resetPassword($user)
     {
         $siteTitle = Configure::read('DataCenter.siteTitle');
+        $fromEmail = Configure::read('DataCenter.UserMailer.fromEmail');
+        $fromName = Configure::read('DataCenter.UserMailer.fromName');
         $this
+            ->setFrom($fromEmail, $fromName)
             ->setTo($user->email)
             ->setSubject("$siteTitle - Reset password")
             ->setViewVars([
