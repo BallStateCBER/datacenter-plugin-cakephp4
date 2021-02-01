@@ -49,7 +49,7 @@ use Cake\Core\Configure;
         <?= $this->fetch('top-html') ?>
 
         <header>
-            <div class="max_width">
+            <div class="max-width">
                 <h1>
                     <a href="https://bsu.edu/cber">
                         Center for Business and Economic Research
@@ -60,7 +60,7 @@ use Cake\Core\Configure;
                     </a>
                 </h1>
                 <br class="clear" />
-                <a href="https://cberdata.org/" id="data_center_nameplate">
+                <a href="https://cberdata.org/" id="data-center-nameplate">
                     CBER Data Center
                 </a>
                 <?= $this->element('DataCenter.nav') ?>
@@ -70,19 +70,19 @@ use Cake\Core\Configure;
 
         <?= $this->fetch('site_title') ?>
 
-        <div id="content_wrapper" class="max_width">
+        <div id="content-wrapper" class="max-width">
             <?php if ($this->fetch('sidebar')): ?>
-                <div id="two_col_wrapper">
+                <div id="two-col-wrapper">
                     <?php /*
-                     * These two col_stretcher divs ensure that both the sidebar and content area have the appearance
+                     * These two col-stretcher divs ensure that both the sidebar and content area have the appearance
                      * of having the same height.
                      */ ?>
-                    <div id="menu_col_stretcher" class="col_stretcher"></div>
-                    <div id="content_col_stretcher" class="col_stretcher"></div>
-                    <div id="menu_column">
+                    <div id="menu-col-stretcher" class="col-stretcher"></div>
+                    <div id="content-col-stretcher" class="col-stretcher"></div>
+                    <div id="menu-column">
                         <?= $this->fetch('sidebar') ?>
                     </div>
-                    <main id="content_column">
+                    <main id="content-column">
                         <div id="flash-messages">
                             <?= $this->Flash->render() ?>
                         </div>

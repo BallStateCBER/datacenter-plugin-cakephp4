@@ -143,7 +143,7 @@ body {
         padding: 0;
         position: relative;
 
-        .max_width {
+        .max-width {
             height: 65px;
             position: relative;
         }
@@ -265,20 +265,20 @@ body {
     margin-top: 0;
 }
 
-.max_width {
+.max-width {
     margin-left: auto;
     margin-right: auto;
     width: $maxContentWidth;
 }
 
-.max_width_padded {
+.max-width-padded {
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
     width: $maxContentWidth - 20px;
 }
 
-#data_center_logo {
+#data-center-logo {
     bottom: 0;
     clear: left;
     margin-top: 10px;
@@ -294,7 +294,7 @@ body {
     }
 }
 
-#content_column {
+#content-column {
     background-color: #FFF;
 }
 
@@ -303,7 +303,7 @@ body {
     padding: 15px;
 }
 
-#cberlogo_copyright {
+#cberlogo-copyright {
     color: #3a4040;
     float: left;
     font-size: 80%;
@@ -313,7 +313,7 @@ body {
     width: 185px;
 }
 
-#data_center_nameplate {
+#data-center-nameplate {
     color: #CC0000;
     bottom: 0;
     display: block;
@@ -334,42 +334,42 @@ body {
     margin-top: 20px;
 }
 
-#two_col_wrapper {
+#two-col-wrapper {
     position: relative;
 
     > div {
         background-color: #fff;
     }
 
-    > .col_stretcher {
+    > .col-stretcher {
         bottom: 0;
         position: absolute;
         top: 0;
         z-index: 0;
     }
 
-    #menu_column {
+    #menu-column {
         position: relative;
         z-index: 1;
     }
 
-    #content_column {
+    #content-column {
         margin-left: 245px;
         position: relative;
         z-index: 1;
     }
 }
 
-#menu_col_stretcher {
+#menu-col-stretcher {
     width: 230px;
 }
 
-#content_col_stretcher {
+#content-col-stretcher {
     left: 245px;
     width: 755px;
 }
 
-#menu_column {
+#menu-column {
     background-color: #FFFFFF;
     float: left;
     margin-right: 15px;
@@ -413,7 +413,7 @@ body {
     }
 }
 
-#content_wrapper {
+#content-wrapper {
     flex: 1 0 auto;
     padding: 0 0 30px 0;
 
@@ -425,7 +425,7 @@ body {
     }
 }
 
-#content_inner_wrapper {
+#content-inner-wrapper {
     background-color: #fff;
     padding: 15px;
 }
@@ -468,49 +468,49 @@ $gradeColorF: #4B88AA;
 
 svg {
     path {
-        &.grade_a {
+        &.grade-a {
             fill: $gradeColorA;
         }
 
-        &.grade_b {
+        &.grade-b {
             fill: $gradeColorB;
         }
 
-        &.grade_c {
+        &.grade-c {
             fill: $gradeColorC;
         }
 
-        &.grade_d {
+        &.grade-d {
             fill: $gradeColorD;
         }
 
-        &.grade_f {
+        &.grade-f {
             fill: $gradeColorF;
         }
     }
 }
 
-.grade_a {
+.grade-a {
     background-color: $gradeColorA;
     fill: $gradeColorA;
 }
 
-.grade_b {
+.grade-b {
     background-color: $gradeColorB;
     fill: $gradeColorB;
 }
 
-.grade_c {
+.grade-c {
     background-color: $gradeColorC;
     fill: $gradeColorC;
 }
 
-.grade_d {
+.grade-d {
     background-color: $gradeColorD;
     fill: $gradeColorD;
 }
 
-.grade_f {
+.grade-f {
     background-color: $gradeColorF;
     fill: $gradeColorF;
 }
@@ -580,7 +580,7 @@ div.paginator {
     }
 }
 
-.tag_cloud {
+.tag-cloud {
     a:nth-child(even) {
         color: #CC0000;
     }

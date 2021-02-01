@@ -1,6 +1,6 @@
 <footer>
-    <div class="max_width">
-        <div id="cberlogo_copyright">
+    <div class="max-width">
+        <div id="cberlogo-copyright">
             <a href="https://www.bsu.edu/cber">
                 <img src="/data_center/img/BallStateCBER-red.png" alt="Ball State Logo"/>
                 <span class="sr-only">
