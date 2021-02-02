@@ -13,7 +13,7 @@
     $thisSiteUrl = Configure::read('DataCenter.siteUrl');
 ?>
 
-<nav>
+<nav aria-labelledby="data-center-site-links">
     <?php foreach ($tabs as $tab): ?>
         <?php if ($tab[1] == $thisSiteUrl): ?>
             <a href="<?= $tab[1] ?>" class="selected">
