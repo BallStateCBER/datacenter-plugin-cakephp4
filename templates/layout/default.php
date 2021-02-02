@@ -70,27 +70,20 @@ use Cake\Core\Configure;
 
         <?= $this->fetch('site_title') ?>
 
-        <div id="content-wrapper" class="max-width">
+        <div id="content-wrapper" class="container">
             <?php if ($this->fetch('sidebar')): ?>
-                <div id="two-col-wrapper">
-                    <?php /*
-                     * These two col-stretcher divs ensure that both the sidebar and content area have the appearance
-                     * of having the same height.
-                     */ ?>
-                    <div id="menu-col-stretcher" class="col-stretcher"></div>
-                    <div id="content-col-stretcher" class="col-stretcher"></div>
-                    <div id="menu-column">
+                <div id="two-col-wrapper" class="row">
+                    <nav id="sidebar" class="col-lg-2 col-md-3 col-12 mb-5 mb-md-0" aria-labelledby="site-navigation">
                         <?= $this->fetch('sidebar') ?>
-                    </div>
-                    <main id="content-column">
-                        <div id="flash-messages">
-                            <?= $this->Flash->render() ?>
-                        </div>
+                    </nav>
+                    <main class="col-lg-10 col-md-9 col-12 px-0 px-md-4">
                         <div id="content">
+                            <div id="flash-messages">
+                                <?= $this->Flash->render() ?>
+                            </div>
                             <?= $this->element('DataCenter.page_title') ?>
                             <?= $this->fetch('content') ?>
                         </div>
-                        <br class="clear" />
                     </main>
                 </div>
             <?php else: ?>
