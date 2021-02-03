@@ -23,7 +23,7 @@ use Cake\Core\Configure;
         <meta name="title" content="<?= $title ?>" />
         <meta name="author" content="Center for Business and Economic Research, Ball State University" />
         <meta name="language" content="en" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <?= $this->fetch('meta') ?>
         <?= $this->element('DataCenter.social_media_tags') ?>
         <link rel="apple-touch-icon" sizes="180x180" href="/data_center/apple-touch-icon.png" />
@@ -35,6 +35,8 @@ use Cake\Core\Configure;
         <link href="https://fonts.googleapis.com/css?family=Asap:400,400italic,700" rel="stylesheet" type="text/css" />
         <?= $this->Html->css('style') ?>
         <?= $this->fetch('css') ?>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
         <?= $this->fetch('scriptTop') ?>
         <?= $this->Html->script('/data_center/js/slide.js') ?>
         <?= $this->Html->script('/data_center/js/flash.js') ?>
@@ -49,8 +51,8 @@ use Cake\Core\Configure;
         <?= $this->fetch('top-html') ?>
 
         <header>
-            <div class="max-width">
-                <h1>
+            <div class="container">
+                <h1 id="cber-bsu-links">
                     <a href="https://bsu.edu/cber">
                         Center for Business and Economic Research
                     </a>
@@ -59,12 +61,7 @@ use Cake\Core\Configure;
                         Ball State University
                     </a>
                 </h1>
-                <br class="clear" />
-                <a href="https://cberdata.org/" id="data-center-nameplate">
-                    CBER Data Center
-                </a>
                 <?= $this->element('DataCenter.nav') ?>
-                <br class="clear" />
             </div>
         </header>
 

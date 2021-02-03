@@ -139,12 +139,10 @@ body {
     > header {
         background-color: #fff;
         border-bottom: 5px solid #cc0000;
-        flex: none;
-        height: 70px;
-        line-height: inherit;
-        min-width: 1000px;
-        padding: 0;
-        position: relative;
+
+        a {
+            transition: none;
+        }
 
         .max-width {
             height: 65px;
@@ -153,7 +151,6 @@ body {
 
         h1 {
             color: #cc0000;
-            float: left;
             font-size: 11px;
             font-weight: bold;
             letter-spacing: 2px;
@@ -169,42 +166,21 @@ body {
             }
         }
 
-        nav {
-            float: right;
-            margin-top: 10px;
-            bottom: 0;
-            right: 0;
-            position: absolute;
+        nav.navbar {
+            padding-bottom: 0;
+            padding-left: 0;
+        }
 
-            a:link,
-            a:visited,
-            a:hover,
-            a:active {
-                background-color: #CC0000;
-                color: #FFF;
-                display: block;
-                float: left;
-                font-size: 10px;
-                font-weight: bold;
-                margin: 0 2px -5px 2px;
-                padding: 5px;
-                text-align: center;
-                text-decoration: none;
-                text-transform: uppercase;
-                vertical-align: text-bottom;
-
-                &:last-child {
-                    margin-right: 0;
-                }
-
-                &.selected {
-                    background-color: #3A4040;
+        .navbar-light {
+            .navbar-nav {
+                .nav-link {
+                    color: #fff;
                 }
             }
+        }
 
-            a:hover {
-                background-color: #3a4040;
-            }
+        .navbar-toggler {
+            margin-bottom: 0.5rem;
         }
     }
 
@@ -253,6 +229,88 @@ body {
             margin: 0;
             padding: 0;
         }
+    }
+}
+
+@media (min-width: 0) {
+    body {
+        > header {
+            .navbar-light .navbar-nav {
+                .nav-link:link,
+                .nav-link:visited,
+                .nav-link:active {
+                    color: $link-color;
+                }
+
+                .nav-link:hover,
+                .nav-link:focus {
+                    color: rgba(0, 0, 0, 0.9);
+                }
+
+                .nav-item.active {
+                    .nav-link {
+                        color: rgba(0, 0, 0, 0.9);
+
+                        &::before {
+                            content: "> ";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: map.get($grid-breakpoints, "lg")) {
+    body {
+        > header {
+            .navbar-light .navbar-nav {
+                .nav-link:link,
+                .nav-link:visited,
+                .nav-link:hover,
+                .nav-link:active {
+                    background-color: #cc0000;
+                    color: #fff;
+                    display: block;
+                    float: left;
+                    font-size: 10px;
+                    font-weight: bold;
+                    margin: 0 2px -5px 2px;
+                    padding: 5px;
+                    text-align: center;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    vertical-align: text-bottom;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+
+                .nav-link:hover,
+                .nav-link:focus {
+                    background-color: #3a4040;
+                    color: #fff;
+                }
+
+                .nav-item.active {
+                    .nav-link {
+                        background-color: #3a4040;
+                        color: #fff;
+
+                        &::before {
+                            content: "";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#cber-bsu-links {
+    a {
+        white-space: nowrap;
     }
 }
 
@@ -346,14 +404,10 @@ body {
 
 #data-center-nameplate {
     color: #CC0000;
-    bottom: 0;
-    display: block;
     font-family: Asap, sans-serif;
     font-size: 20px;
     font-weight: 700;
-    left: 0;
     line-height: 20px;
-    position: absolute;
     text-decoration: none;
     text-transform: uppercase;
 }
