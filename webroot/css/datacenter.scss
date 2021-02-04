@@ -8,6 +8,7 @@ $link-color: #0099BB;
 $link-hover-color: $link-color;
 $maxContentWidth: 1000px;
 $layoutBoxShadow: 0.25em 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.2);
+$layoutBorderRadius: 0.5em;
 
 /**************
  * BASIC TAGS *
@@ -314,38 +315,26 @@ body {
     }
 }
 
-#two-col-wrapper {
-    #content {
-        border-radius: 1em;
-    }
-}
-
 @media (min-width: 0) {
     #sidebar {
-        border-radius: 1em;
+        border-radius: $layoutBorderRadius;
     }
 }
 
 @media (min-width: map.get($grid-breakpoints, "md")) {
     #sidebar {
-        border-bottom-left-radius: 1em;
-        border-bottom-right-radius: 0;
-        border-top-left-radius: 1em;
-        border-top-right-radius: 0;
+        border-radius: $layoutBorderRadius 0 0 $layoutBorderRadius;
     }
     #two-col-wrapper {
         #content {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 1em;
-            border-top-left-radius: 0;
-            border-top-right-radius: 1em;
+            border-radius: 0 $layoutBorderRadius $layoutBorderRadius 0;
         }
     }
 }
 
 #content {
-    background-color: #FFF;
-    border-radius: 1em;
+    background-color: #fff;
+    border-radius: $layoutBorderRadius;
     box-shadow: $layoutBoxShadow;
     padding: 1em;
 }
