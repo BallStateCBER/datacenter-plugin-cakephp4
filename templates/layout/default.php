@@ -33,6 +33,7 @@ use Cake\Core\Configure;
         <link rel="mask-icon" href="/data_center/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="theme-color" content="#cc0022" />
         <link href="https://fonts.googleapis.com/css?family=Asap:400,400italic,700" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="/data_center/fontawesome-free-5.15.1-web/css/all.min.css" />
         <?= $this->Html->css('style') ?>
         <?= $this->fetch('css') ?>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
