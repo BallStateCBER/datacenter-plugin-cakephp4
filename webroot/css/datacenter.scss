@@ -213,20 +213,18 @@ body {
         }
 
         dl {
-            margin: 0;
+            margin: 0 0 10px 0;
             padding: 0;
         }
 
         dt {
-            clear: left;
-            float: left;
+            display: inline;
             margin: 0;
             padding: 0 5px 0 0;
         }
 
         dd {
-            clear: right;
-            float: left;
+            display: inline;
             margin: 0;
             padding: 0;
         }
@@ -483,6 +481,20 @@ body {
     right: 15px;
     top: 15px;
     z-index: 10;
+}
+
+#social-media-links {
+    a {
+        font-size: 2em;
+        margin-right: 0.5em;
+
+        &:last-child {
+            margin-right: 0;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 /*********
