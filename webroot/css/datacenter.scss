@@ -368,8 +368,11 @@ body {
 }
 
 #site-title {
-    background-color: #fff;
-    margin: 15px auto;
+    padding: 0;
+
+    h1 {
+        margin: 15px auto;
+    }
 
     img {
         display: block;

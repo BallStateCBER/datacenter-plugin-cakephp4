@@ -45,7 +45,7 @@ If you'd like to have a masthead or other content between the header and main co
 populate the `site_title` view block in `templates/layout/default.php`. Example:
 ```php
 <?php $this->append('site_title'); ?>
-    <h1 id="site-title">
+    <h1>
         <a href="/">
             <img src="/img/masthead.png" alt="<?= Configure::read('DataCenter.siteTitle') ?>" />
         </a>
@@ -56,7 +56,7 @@ populate the `site_title` view block in `templates/layout/default.php`. Example:
     <?= $this->fetch('content') ?>
 </div>
 ```
-Such masthead images will adjust to fit inside the viewport, but should ideally be **1,110px wide**.
+Such masthead images will adjust to fit inside the viewport, but should ideally be **1,140px wide**.
 
 ## CSS
 Create `webroot/css/style.scss` with these imports at the top:

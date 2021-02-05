@@ -65,7 +65,15 @@ use Cake\Core\Configure;
             </div>
         </header>
 
-        <?= $this->fetch('site_title') ?>
+        <?php if ($this->fetch('site_title')): ?>
+            <div class="container" id="site-title">
+                <div class="row">
+                    <div class="col-12">
+                        <?= $this->fetch('site_title') ?>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
 
         <div id="content-wrapper" class="container">
             <?php if ($this->fetch('sidebar')): ?>
@@ -73,7 +81,7 @@ use Cake\Core\Configure;
                     <nav id="sidebar" class="col-lg-2 col-md-3 col-12 mb-5 mb-md-0" aria-labelledby="site-navigation">
                         <?= $this->fetch('sidebar') ?>
                     </nav>
-                    <main class="col-lg-10 col-md-9 col-12 px-0 px-md-4">
+                    <main class="col-lg-10 col-md-9 col-12 px-0 pl-md-4">
                         <div id="content">
                             <div id="flash-messages">
                                 <?= $this->Flash->render() ?>
