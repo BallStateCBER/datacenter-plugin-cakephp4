@@ -7,7 +7,7 @@ editing the plugin's configuration and setting view variables.
 - Enter a general description of the website in `DataCenter.openGraphDescription` to be used in the absence of a
   page-specific description
 - In `config/datacenter.php`, the `DataCenter.defaultOpenGraphLogoPath` should be set with a value such as
-  `'https://subdomain.cberdata.org/img/logo/og_logo.png', true)`
+  `'https://subdomain.cberdata.org/img/logo/og_logo.png'`
 - If a different default image is desired for Twitter, set that path as `DataCenter.defaultTwitterLogoPath`
 - If a Facebook app is associated with this website, set the value `DataCenter.facebookAppId`
 - If this website is associated with a different Twitter handle than @BallStateCBER, set `DataCenter.twitterUsername`
