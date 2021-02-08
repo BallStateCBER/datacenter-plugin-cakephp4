@@ -75,6 +75,7 @@ If you're using the tag editor, also add
 - Have `Mailer` classes extend `DataCenter\Mailer\DataCenterMailer` to use the plugin's default layout and settings
 - If using the `DataCenter.default` email layout, create elements called `email_signature_html.php` and
   `email_signature_text.php` to override default signatures
+- These elements can `return false` to disable email signatures
 
 ## Authentication / Authorization
 Refer to the plugin's [auth docs](docs/auth.md) for information about using its standard auth setup.

@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \App\View\AppView $this
+ * @var \Cake\View\View $this
  */
 
 use Cake\Core\Configure;
@@ -13,6 +13,9 @@ $defaultSignature = sprintf(
     Configure::read('DataCenter.siteUrl'),
     Configure::read('DataCenter.siteUrl')
 );
+if ($signature !== false) {
+    $signature = $signature ?: $defaultSignature;
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
@@ -28,8 +31,7 @@ $defaultSignature = sprintf(
                         <tr>
                             <td>
                                 <?= $this->fetch('content') ?>
-
-                                <?= $signature ? $signature : $defaultSignature ?>
+                                <?= $signature ?>
                             </td>
                         </tr>
                     </table>
