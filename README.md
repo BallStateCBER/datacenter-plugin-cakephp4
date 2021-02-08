@@ -39,6 +39,10 @@ $this->extend('DataCenter.default');
 // If you have a /templates/elements/sidebar.php file
 $this->assign('sidebar', $this->element('sidebar'));
 ?>
+
+<div id="content">
+    <?= $this->fetch('content') ?>
+</div>
 ```
 
 If you'd like to have a masthead or other content between the header and main content,
@@ -51,10 +55,6 @@ populate the `site_title` view block in `templates/layout/default.php`. Example:
         </a>
     </h1>
 <?php $this->end(); ?>
-
-<div id="content">
-    <?= $this->fetch('content') ?>
-</div>
 ```
 Such masthead images will adjust to fit inside the viewport, but should ideally be **1,140px wide**.
 
