@@ -56,7 +56,9 @@ populate the `site_title` view block in `templates/layout/default.php`. Example:
     </h1>
 <?php $this->end(); ?>
 ```
-Such masthead images will adjust to fit inside the viewport, but should ideally be **1,140px wide**.
+- Such masthead images will adjust to fit inside the viewport, but should ideally be **1,140px wide**.
+- If you're using text instead of an image, use `<h1 class="text">` to apply padding, border-radius, and background
+  color.
 
 ## CSS
 Create `webroot/css/style.scss` with these imports at the top:

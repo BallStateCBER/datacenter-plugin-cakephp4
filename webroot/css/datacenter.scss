@@ -375,6 +375,12 @@ body {
 
   h1 {
     margin: 15px auto;
+
+    &.text {
+      background-color: #fff;
+      border-radius: $layoutBorderRadius;
+      padding: 15px;
+    }
   }
 
   img {
