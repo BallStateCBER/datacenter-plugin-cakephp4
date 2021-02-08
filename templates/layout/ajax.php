@@ -4,16 +4,9 @@
  * @var array $flashMessages
  * @var string $pageTitle
  */
-use Cake\Core\Configure;
-
-$googleAnalyticsId = Configure::read('google_analytics_id');
-$gaConfig = ['page_title' => $pageTitle ?? null];
 ?>
-<?php if ($googleAnalyticsId && !Configure::read('debug')): ?>
-    <?php $this->append('buffered'); ?>
-    gtag('config', <?= json_encode($googleAnalyticsId) ?>, <?= json_encode($gaConfig) ?>);
-    <?php $this->end(); ?>
-<?php endif; ?>
+
+<?= $this->element('DataCenter.analytics') ?>
 
 <?php if (!empty($flashMessages)): ?>
     <?php foreach ($flashMessages as $msg): ?>

@@ -30,5 +30,6 @@ return [
         'openGraphDescription' => '',
         'facebookAppId' => '',
         'twitterUsername' => '@BallStateCBER',
+        'googleAnalyticsId' => '',
     ],
 ];

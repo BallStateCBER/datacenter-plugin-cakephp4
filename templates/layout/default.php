@@ -43,6 +43,7 @@ use Cake\Core\Configure;
         <?= $this->Html->script('/data_center/js/flash.js') ?>
 
         <?= $this->fetch('script') ?>
+        <?= $this->element('DataCenter.analytics') ?>
     </head>
     <body class="default-layout">
         <?php if (Configure::read('googleTagManagerId')): ?>
