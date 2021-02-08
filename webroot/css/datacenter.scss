@@ -9,6 +9,7 @@ $link-hover-color: $link-color;
 $maxContentWidth: 1000px;
 $layoutBoxShadow: 0.25em 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.2);
 $layoutBorderRadius: 7px;
+$redHighlightColor: #cc0000;
 
 /**************
  * BASIC TAGS *
@@ -28,7 +29,7 @@ h1 {
   margin: 0;
 
   &.page-title {
-    color: #cc0000;
+    color: $redHighlightColor;
     font-size: 200%;
     font-weight: bold;
     margin-bottom: 0.5em;
@@ -37,7 +38,7 @@ h1 {
     a:visited,
     a:hover,
     a:active {
-      color: #cc0000;
+      color: $redHighlightColor;
     }
   }
 }
@@ -139,7 +140,7 @@ body {
 
   > header {
     background-color: #fff;
-    border-bottom: 5px solid #cc0000;
+    border-bottom: 5px solid $redHighlightColor;
 
     a {
       transition: none;
@@ -151,14 +152,14 @@ body {
     }
 
     h1 {
-      color: #cc0000;
+      color: $redHighlightColor;
       font-size: 11px;
       font-weight: bold;
       letter-spacing: 2px;
       margin-top: 15px;
       text-transform: uppercase;
       a {
-        color: #cc0000;
+        color: $redHighlightColor;
 
         &:hover {
           color: #000;
@@ -187,7 +188,7 @@ body {
 
   > footer {
     background-color: #fff;
-    border-top: 5px solid #cc0000;
+    border-top: 5px solid $redHighlightColor;
     flex: none;
     font-size: 90%;
     line-height: 1.3em;
@@ -268,7 +269,7 @@ body {
         .nav-link:visited,
         .nav-link:hover,
         .nav-link:active {
-          background-color: #cc0000;
+          background-color: $redHighlightColor;
           color: #fff;
           display: block;
           float: left;
@@ -380,6 +381,13 @@ body {
       background-color: #fff;
       border-radius: $layoutBorderRadius;
       padding: 15px;
+
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        color: $redHighlightColor;
+      }
     }
   }
 
@@ -404,7 +412,7 @@ body {
 }
 
 #data-center-nameplate {
-  color: #CC0000;
+  color: $redHighlightColor;
   font-family: Asap, sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -636,6 +644,6 @@ div.paginator {
 
 .tag-cloud {
   a:nth-child(even) {
-    color: #CC0000;
+    color: $redHighlightColor;
   }
 }
