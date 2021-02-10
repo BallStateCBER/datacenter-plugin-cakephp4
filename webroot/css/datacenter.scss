@@ -9,6 +9,7 @@ $link-hover-color: $link-color;
 $maxContentWidth: 1000px;
 $layoutBoxShadow: 0.25em 0.25em 0.25em 0.25em rgba(0, 0, 0, 0.2);
 $layoutBorderRadius: 7px;
+$layoutSpacing: 15px;
 $redHighlightColor: #cc0000;
 
 /**************
@@ -156,7 +157,7 @@ body {
       font-size: 11px;
       font-weight: bold;
       letter-spacing: 2px;
-      margin-top: 15px;
+      margin-top: $layoutSpacing;
       text-transform: uppercase;
       a {
         color: $redHighlightColor;
@@ -200,7 +201,7 @@ body {
       h3 {
         font-size: 125%;
         font-weight: bold;
-        margin: 15px 0 0 0;
+        margin: $layoutSpacing 0 0 0;
       }
     }
 
@@ -376,12 +377,12 @@ body {
 
   h1 {
     font-weight: bold;
-    margin: 15px auto 0 auto;
+    margin: $layoutSpacing auto 0 auto;
 
     &.text {
       background-color: #fff;
       border-radius: $layoutBorderRadius;
-      padding: 15px;
+      padding: $layoutSpacing;
 
       a:link,
       a:visited,
@@ -457,13 +458,13 @@ body {
 
   > section,
   > div {
-    margin-bottom: 15px;
+    margin-bottom: $layoutSpacing;
   }
 }
 
 #content-wrapper {
   flex: 1 0 auto;
-  margin-top: 15px;
+  margin-top: $layoutSpacing;
   padding-bottom: 30px;
 
   &::after {
@@ -476,7 +477,7 @@ body {
 
 #content-inner-wrapper {
   background-color: #fff;
-  padding: 15px;
+  padding: $layoutSpacing;
 }
 
 #noscript {
@@ -486,11 +487,11 @@ body {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
   color: #7F0000;
   font-weight: bold;
-  left: 15px;
+  left: $layoutSpacing;
   padding: 20px;
   position: absolute;
-  right: 15px;
-  top: 15px;
+  right: $layoutSpacing;
+  top: $layoutSpacing;
   z-index: 10;
 }
 
