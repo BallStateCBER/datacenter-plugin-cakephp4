@@ -24,7 +24,7 @@ return [
         ],
 
         // Use full URL or leading slash, e.g. '/img/logo/og_logo.png'
-        'defaultOpenGraphLogoPath' => '',
+        'defaultOpenGraphLogoPath' => '/data_center/img/default-og-logo.png',
         'defaultTwitterLogoPath' => '',
 
         'openGraphDescription' => '',
