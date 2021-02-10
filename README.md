@@ -14,6 +14,7 @@
  - Copy the plugin's `config/datacenter.php` configuration file to the application's `config` directory
  - Set `'DataCenter.siteTitle'` and `'DataCenter.siteUrl'` in the copy
  - Change other values as appropriate
+ - Comment out or remove lines in this file to fall back on the plugin's default configuration values
 
 ## View layer
 
