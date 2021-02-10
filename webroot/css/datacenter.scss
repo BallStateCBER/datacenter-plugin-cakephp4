@@ -348,23 +348,6 @@ body {
   padding: 5px;
 }
 
-.page-header {
-  margin-top: 0;
-}
-
-.max-width {
-  margin-left: auto;
-  margin-right: auto;
-  width: $maxContentWidth;
-}
-
-.max-width-padded {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px;
-  width: $maxContentWidth - 20px;
-}
-
 #data-center-logo {
   bottom: 0;
   clear: left;
@@ -423,13 +406,6 @@ body {
   text-transform: uppercase;
 }
 
-#sql_dump_toggler {
-  color: #fff;
-  font-weight: bold;
-  display: inline-block;
-  margin-top: 20px;
-}
-
 #sidebar {
   background-color: #fff;
   box-shadow: $layoutBoxShadow;
@@ -463,7 +439,6 @@ body {
 }
 
 #content-wrapper {
-  flex: 1 0 auto;
   margin-top: $layoutSpacing;
   padding-bottom: 30px;
 
@@ -473,11 +448,6 @@ body {
     height: 0;
     visibility: hidden;
   }
-}
-
-#content-inner-wrapper {
-  background-color: #fff;
-  padding: $layoutSpacing;
 }
 
 #noscript {
@@ -604,22 +574,6 @@ svg {
 p.error,
 p.notice {
   clear: none;
-}
-
-.cake-sql-log {
-  table {
-    background: #f4f4f4;
-  }
-
-  td {
-    font-family: Monaco, Consolas, "Courier New", monospace;
-    padding: 4px 8px;
-    text-align: left;
-  }
-
-  caption {
-    color: #fff;
-  }
 }
 
 /*****************
