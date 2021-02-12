@@ -44,6 +44,7 @@ $this->assign('sidebar', $this->element('sidebar'));
 </div>
 ```
 
+#### Mastheads
 If you'd like to have a masthead or other content between the header and main content,
 populate the `site_title` view block in `templates/layout/default.php`. Example:
 ```php
@@ -61,6 +62,16 @@ populate the `site_title` view block in `templates/layout/default.php`. Example:
 - Such masthead images will adjust to fit inside the viewport, but should ideally be **1,140px wide**.
 - If you're using text instead of an image, use `<h1 class="text">` to apply padding, border-radius, and background
   color.
+
+#### Overriding layout classes
+To override the class names applied to `<nav>` and `<main>` in a layout with a sidebar, such as to change the column
+width proportions, set the `$navClassNames` and `$mainClassNames` view variables, e.g.
+```php
+$this->set([
+    'navClassNames' => 'col-lg-3 col-md-3 col-12 mb-5 mb-md-0',
+    'mainClassNames' => 'col-lg-9 col-md-9 col-12 px-0 pl-md-4',
+]);
+```
 
 ## CSS
 Create `webroot/css/style.scss` with these imports at the top:
