@@ -71,9 +71,9 @@ class User extends Entity implements IdentityInterface
     /**
      * Authentication\IdentityInterface method
      *
-     * @return \Authentication\IdentityInterface
+     * @return \ArrayAccess|array
      */
-    public function getOriginalData(): IdentityInterface
+    public function getOriginalData()
     {
         return $this;
     }
