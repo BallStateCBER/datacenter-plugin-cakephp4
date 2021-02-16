@@ -23,7 +23,6 @@ $defaultOgMetaTags = [
     'og:description' => Configure::read('DataCenter.openGraphDescription'),
     'og:locale' => 'en_US',
     'twitter:site' => Configure::read('DataCenter.twitterUsername'),
-    'twitter:creator' => '',
     'twitter:image' => $defaultTwitterImage,
     'fb:app_id' => Configure::read('DataCenter.facebookAppId'),
 ];
