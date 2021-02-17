@@ -100,27 +100,6 @@ ol {
   margin: 10px 0;
 }
 
-ul {
-  list-style-position: outside;
-  list-style-type: disc;
-
-  &.unstyled {
-    margin: 0;
-    padding: 0;
-
-    li {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  > li {
-    list-style-position: outside;
-    list-style-type: disc;
-  }
-}
-
 img {
   border: 0;
 }

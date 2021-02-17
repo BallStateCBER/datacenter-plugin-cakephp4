@@ -27,7 +27,7 @@ $nextButton = $this->Paginator->next(
 $next = $hasNext ? $nextButton : null;
 ?>
 <div class="paginator form-inline">
-    <ul class="unstyled form-group">
+    <ul class="list-unstyled form-group">
         <?= $prev ?>
         <?php if ($hasPrev || $hasNext) : ?>
             <li>

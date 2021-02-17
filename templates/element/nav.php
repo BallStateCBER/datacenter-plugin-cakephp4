@@ -22,7 +22,7 @@ $thisSiteUrl = Configure::read('DataCenter.siteUrl');
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="top-navbar">
-        <ul class="navbar-nav unstyled ml-auto">
+        <ul class="navbar-nav list-unstyled ml-auto">
             <?php foreach ($tabs as $tab): ?>
                 <li class="nav-item <?= $tab[1] == $thisSiteUrl ? 'active' : null ?>">
                     <a href="<?= $tab[1] ?>" class="nav-link">
