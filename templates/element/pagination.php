@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \DataCenter\View\AppView $this
+ * @var \Cake\View\View $this
  */
 
 $totalPages = $this->Paginator->counter('{{pages}}');
@@ -36,12 +36,8 @@ $next = $hasNext ? $nextButton : null;
                 </label>
                 <select class="custom-select" id="paginator-page-select">
                     <?php for ($p = 1; $p <= $totalPages; $p++) : ?>
-                        <option
-                            <?php if ($p == $currentPage) :
-                            ?>selected="selected"<?php
-                        endif; ?>
-                            data-url="<?= $this->Paginator->generateUrl(['page' => $p]) ?>"
-                        >
+                        <option data-url="<?= $this->Paginator->generateUrl(['page' => $p]) ?>"
+                            <?= $p == $currentPage ? 'selected="selected"' : '' ?>>
                             <?= $p ?>
                         </option>
                     <?php endfor; ?>
@@ -53,7 +49,7 @@ $next = $hasNext ? $nextButton : null;
 </div>
 <?php $this->Html->script('/data_center/js/pagination.js', ['block' => true]); ?>
 <?php $this->append('buffered'); ?>
-if (typeof pagination === 'undefined') {
-pagination = new Pagination();
-}
+    if (typeof pagination === 'undefined') {
+        pagination = new Pagination();
+    }
 <?php $this->end(); ?>
