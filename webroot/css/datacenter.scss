@@ -309,7 +309,7 @@ body {
       }
     }
   }
-  #two-col-wrapper {
+  .with-sidebar {
     #content {
       border-radius: 0 $layoutBorderRadius $layoutBorderRadius 0;
     }
@@ -420,6 +420,11 @@ body {
 #content-wrapper {
   margin-top: $layoutSpacing;
   padding-bottom: 30px;
+
+  &:not(.with-sidebar) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   &::after {
     content: '\00a0'; /* &nbsp; */

@@ -4,7 +4,18 @@ use Cake\Core\Configure;
 // Only used if a sidebar is present
 $navClassNames = $navClassNames ?? 'col-lg-2 col-md-3 col-12 mb-5 mb-md-0';
 $mainClassNames = $mainClassNames ?? 'col-lg-10 col-md-9 col-12 px-0 pl-md-4';
+$hasSidebar = (bool)$this->fetch('sidebar');
 ?>
+<?php $this->start('main'); ?>
+    <main id="content">
+        <div id="flash-messages">
+            <?= $this->Flash->render() ?>
+        </div>
+        <?= $this->element('DataCenter.page_title') ?>
+        <?= $this->fetch('content') ?>
+    </main>
+<?php $this->end(); ?>
+
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
     <head>
@@ -81,27 +92,18 @@ $mainClassNames = $mainClassNames ?? 'col-lg-10 col-md-9 col-12 px-0 pl-md-4';
             </div>
         <?php endif; ?>
 
-        <div id="content-wrapper" class="container">
-            <?php if ($this->fetch('sidebar')): ?>
-                <div id="two-col-wrapper" class="row">
+        <div id="content-wrapper" class="container <?= $hasSidebar ? 'with-sidebar' : '' ?>">
+            <?php if ($hasSidebar): ?>
+                <div class="row">
                     <nav id="sidebar" class="<?= $navClassNames ?>" aria-labelledby="site-navigation">
                         <?= $this->fetch('sidebar') ?>
                     </nav>
-                    <main class="<?= $mainClassNames ?>">
-                        <div id="content">
-                            <div id="flash-messages">
-                                <?= $this->Flash->render() ?>
-                            </div>
-                            <?= $this->element('DataCenter.page_title') ?>
-                            <?= $this->fetch('content') ?>
-                        </div>
-                    </main>
+                    <div class="<?= $mainClassNames ?>">
+                        <?= $this->fetch('main') ?>
+                    </div>
                 </div>
             <?php else: ?>
-                <main class="container">
-                    <?= $this->fetch('content') ?>
-                </main>
-                <br class="clear" />
+                <?= $this->fetch('main') ?>
             <?php endif; ?>
         </div>
 
