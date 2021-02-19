@@ -414,6 +414,10 @@ body {
   > section,
   > div {
     margin-bottom: $layoutSpacing;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
