@@ -63,13 +63,14 @@ populate the `site_title` view block in `templates/layout/default.php`. Example:
 - If you're using text instead of an image, use `<h1 class="text">` to apply padding, border-radius, and background
   color.
 
-#### Overriding layout classes
-To override the class names applied to `<nav>` and `<main>` in a layout with a sidebar, such as to change the column
-width proportions, set the `$navClassNames` and `$mainClassNames` view variables, e.g.
+#### Overriding sidebar width
+By default, the sidebar is two columns wide in large-width devices and three columns wide in medium-width devices (and
+displayed in its own row in smaller widths). To override this, set the `$lgSidebarWidth` and/or `$mdSidebarWidth` view
+variables
 ```php
 $this->set([
-    'navClassNames' => 'col-lg-3 col-md-3 col-12 mb-5 mb-md-0',
-    'mainClassNames' => 'col-lg-9 col-md-9 col-12 px-0 pl-md-4',
+    'lgSidebarWidth' => 3,
+    'mdSidebarWidth' => 2,
 ]);
 ```
 
