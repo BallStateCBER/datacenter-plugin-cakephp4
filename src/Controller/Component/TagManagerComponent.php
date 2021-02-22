@@ -104,6 +104,10 @@ class TagManagerComponent extends Component
      */
     public function getTagsById($tagIds)
     {
+        if (!$tagIds) {
+            return [];
+        }
+
         $tagIds = array_unique($tagIds);
         $tags = [];
         foreach ($tagIds as $tagId) {
