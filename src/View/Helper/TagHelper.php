@@ -19,8 +19,8 @@ class TagHelper extends Helper
      * - useAutocomplete: (default: false)
      * - container: (default: '#available_tags')
      *
-     * @param array $availableTags Array of available tags
-     * @param array $selectedTags Array of selected tags
+     * @param array $availableTags Array of available tag entities
+     * @param array $selectedTags Array of selected tag entities
      * @param array $options Array of options
      * @return string
      */
