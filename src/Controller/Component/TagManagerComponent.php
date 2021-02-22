@@ -48,8 +48,18 @@ class TagManagerComponent extends Component
         return $tags;
     }
 
+    /**
+     * Returns an array of Tag entities matching the provided names
+     *
+     * @param array|null|bool $tagNames An array of tag names, or null or FALSE
+     * @return array
+     */
     public function getNamedTags($tagNames)
     {
+        if (!$tagNames) {
+            return [];
+        }
+
         // Ensure tag names are unique, lowercase, trimmed strings
         $tagNames = array_map('strtolower', $tagNames);
         $tagNames = array_map('trim', $tagNames);
