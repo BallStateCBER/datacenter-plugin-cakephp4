@@ -30,7 +30,7 @@ class TagHelper extends Helper
         $params['tags'] = $this->availableTagsForJs($availableTags);
         if ($selectedTags) {
             $selectedTags = $this->formatSelectedTags($selectedTags);
-            $params['selected_tags'] = $this->selectedTagsForJs($selectedTags);
+            $params['selectedTags'] = $this->selectedTagsForJs($selectedTags);
         }
 
         return '<script>const tagManager = new TagManager(' . json_encode($params) . ');</script>';
