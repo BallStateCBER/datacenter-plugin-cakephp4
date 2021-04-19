@@ -28,7 +28,7 @@ class TagManagerComponent extends Component
     public function processTagInput(array $requestData, $tagsTable)
     {
         $this->Tags = $tagsTable;
-        $tagNames = explode(',', $requestData['custom_tags']);
+        $tagNames = explode(',', $requestData['custom_tags'] ?? '');
         $tagIds = $requestData['tags']['_ids'];
         $tags = array_merge(
             $this->getNamedTags($tagNames),
