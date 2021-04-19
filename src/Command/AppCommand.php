@@ -8,6 +8,7 @@ use Cake\Console\Arguments;
 use Cake\Console\ConsoleIo;
 use Cake\Console\ConsoleOptionParser;
 use Cake\I18n\Time;
+use Cake\Shell\Helper\ProgressHelper;
 use Exception;
 
 /**
@@ -15,11 +16,13 @@ use Exception;
  *
  * This is a base class for other Data Center commands to extend from. It defines some common methods that may be needed
  * by multiple projects.
+ *
+ * @property \Cake\Shell\Helper\ProgressHelper|\Cake\Console\Helper $progress
  */
-class AppCommand extends Command
+abstract class AppCommand extends Command
 {
-    protected $progress;
-    protected $io;
+    protected ProgressHelper $progress;
+    protected ConsoleIo $io;
 
     /**
      * Hook method for defining this command's option parser.
