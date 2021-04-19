@@ -45,7 +45,7 @@ abstract class AppCommand extends Command
      * @param \Cake\Console\ConsoleIo $io The console io
      * @return void
      */
-    public function execute(Arguments $args, ConsoleIo $io): void
+    public function execute(Arguments $args, ConsoleIo $io)
     {
         $this->io = $io;
         $this->progress = $this->io->helper('Progress');
