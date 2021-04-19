@@ -45,7 +45,7 @@ abstract class AppCommand extends Command
      * @param \Cake\Console\ConsoleIo $io The console io
      * @return void
      */
-    public function execute(Arguments $args, ConsoleIo $io)
+    public function execute(Arguments $args, ConsoleIo $io): void
     {
         $this->io = $io;
         $this->progress = $this->io->helper('Progress');
@@ -57,7 +57,7 @@ abstract class AppCommand extends Command
      * @param int $total Total number of items to be processed
      * @return void
      */
-    protected function makeProgressBar(int $total)
+    protected function makeProgressBar(int $total): void
     {
         $this->progress = $this->io->helper('Progress');
         $this->progress->init([
@@ -74,7 +74,7 @@ abstract class AppCommand extends Command
      * @return int[]
      * @throws \Exception
      */
-    protected function parseMultipleIdString(string $string)
+    protected function parseMultipleIdString(string $string): array
     {
         $ids = [];
 
@@ -114,7 +114,7 @@ abstract class AppCommand extends Command
      * @param string $string String to remove leading zeros from
      * @return string
      */
-    protected function removeLeadingZeros($string)
+    protected function removeLeadingZeros(string $string): string
     {
         return ltrim($string, '0');
     }
@@ -126,7 +126,7 @@ abstract class AppCommand extends Command
      * @param string $default Default selection (leave blank for 'y')
      * @return bool
      */
-    protected function getConfirmation($msg, $default = 'y')
+    protected function getConfirmation(string $msg, $default = 'y'): bool
     {
         return $this->io->askChoice(
             $msg,
@@ -141,7 +141,7 @@ abstract class AppCommand extends Command
      * @param int $start Timestamp
      * @return string
      */
-    protected function getDuration(int $start)
+    protected function getDuration(int $start): string
     {
         $end = time();
 
