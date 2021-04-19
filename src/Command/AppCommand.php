@@ -129,10 +129,10 @@ abstract class AppCommand extends Command
     protected function getConfirmation($msg, $default = 'y')
     {
         return $this->io->askChoice(
-                $msg,
-                ['y', 'n'],
-                $default
-            ) == 'y';
+            $msg,
+            ['y', 'n'],
+            $default
+        ) == 'y';
     }
 
     /**
