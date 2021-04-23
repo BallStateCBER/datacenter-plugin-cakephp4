@@ -5,9 +5,7 @@ $tabs = [
     ['Projects and Publications', 'https://projects.cberdata.org'],
     ['Economic Indicators', 'https://indicators.cberdata.org'],
     ['Weekly Commentary', 'https://commentaries.cberdata.org'],
-    ['County Profiles', 'https://profiles.cberdata.org'],
     ['Community Asset Inventory', 'https://cair.cberdata.org'],
-    ['Brownfield Grant Writers\' Toolbox', 'https://brownfield.cberdata.org'],
     ['Manufacturing Scorecard', 'https://mfgscorecard.cberdata.org'],
 ];
 $thisSiteUrl = Configure::read('DataCenter.siteUrl');
